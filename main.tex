@@ -106,7 +106,10 @@ coltitle=black,center title}}
 \graphicspath{{Images/}{DrawIo/}}
 \newcommand{\emailaddr}[1]{\href{mailto:#1}{\texttt{#1}}}
 
+\newcounter{Site}
+\setcounter{Site}{1}
 
+\ifthenelse{\value{Site}=1}{ 
     \title{\LARGE
         RELAZIONE DI PROGETTO  \\ DI \\ “APPLICAZIONI E SERVIZI WEB” \\
         \hrulefill \\
@@ -121,7 +124,7 @@ coltitle=black,center title}}
         Lirussi Igor \\ \emailaddr{igor.lirussi@studio.unibo.it}
         \\ \\ \\ 
     }
-
+}
 
 
 \date{\today}
