@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html  lang="it"  dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> RELAZIONE DI PROGETTO<br />
+DI<br />
+<q>APPLICAZIONI E SERVIZI WEB</q><br />
+<br />
+Weather Vortex<br />
+<br /></title>
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.4/css/uikit.gradient.css">
+
+        <link rel="stylesheet" href="style.css">
+        <link href="https://vjs.zencdn.net/5.4.4/video-js.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+        <script src="./pandoc-uikit/uikit.js"></script>
+        <script src="./pandoc-uikit/scripts.js"></script>
+        <script src="./pandoc-uikit/jquery.sticky-kit.js"></script>
+
+        <meta name="generator" content="pandoc-uikit" />
+                <meta name="author" content="Zandoli Silvia silvia.zandoli2@studio.unibo.it" />
+                <meta name="author" content="Tentoni Daniele daniele.tentoni2@studio.unibo.it" />
+                <meta name="author" content="Lirussi Igor igor.lirussi@studio.unibo.it   " />
+                        <title> RELAZIONE DI PROGETTO DI &#x201C;APPLICAZIONI E SERVIZI WEB&#x201D;  Weather Vortex  </title>
+        <style type="text/css">code{white-space: pre;}</style>
+                <style type="text/css">q { quotes: "&#x201C;" "&#x201D;" "&#x2018;" "&#x2019;"; }</style>
+                                <link rel="stylesheet" href="./pandoc-uikit/uikit.css" />
+                                             
+    </head>
+
+    <body>
+
+
+        <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+
+                        <div class="uk-grid" data-uk-grid-margin>
+                <div class="uk-width-1-1">
+                    <h1 class="uk-heading-large"> RELAZIONE DI PROGETTO<br />
+DI<br />
+<q>APPLICAZIONI E SERVIZI WEB</q><br />
+<br />
+Weather Vortex<br />
+<br /></h1>
+                                                            <p class="uk-text-large">Zandoli Silvia<br />
+<a href="mailto:silvia.zandoli2@studio.unibo.it"><code>silvia.zandoli2@studio.unibo.it</code></a></p>
+                                        <p class="uk-text-large">Tentoni Daniele<br />
+<a href="mailto:daniele.tentoni2@studio.unibo.it"><code>daniele.tentoni2@studio.unibo.it</code></a></p>
+                                        <p class="uk-text-large">Lirussi Igor<br />
+<a href="mailto:igor.lirussi@studio.unibo.it"><code>igor.lirussi@studio.unibo.it</code></a><br />
+<br />
+<br /></p>
+                                    </div>
+            </div>
+            
+            <div class="uk-grid" data-uk-grid-margin >          
+                <div class="uk-width-medium-1-4">
+                    <div class="uk-overflow-container" data-uk-sticky="{top:25,media: 768}">
+                        <div class="uk-panel uk-panel-box menu-begin" >
+
+                                                        <ul>
+                                                        <li><a href="#foointroduzione"><span class="toc-section-number">1</span> Introduzione</a>
+                                                        <ul>
+                                                        <li><a href="#foooverview"><span class="toc-section-number">1.1</span> Overview</a></li>
+                                                        <li><a href="#fooproblemi"><span class="toc-section-number">1.2</span> Problemi</a></li>
+                                                        <li><a href="#fooobiettivi"><span class="toc-section-number">1.3</span> Obiettivi</a></li>
+                                                        </ul></li>
+                                                        <li><a href="#foostato-dellarte"><span class="toc-section-number">2</span> Stato dell&#x2019;Arte</a></li>
+                                                        <li><a href="#fooprocesso-di-sviluppo"><span class="toc-section-number">3</span> Processo di Sviluppo</a>
+                                                        <ul>
+                                                        <li><a href="#foometodologia-di-sviluppo"><span class="toc-section-number">3.1</span> Metodologia di Sviluppo</a>
+                                                        <ul>
+                                                        <li><a href="#fooscrum"><span class="toc-section-number">3.1.1</span> Scrum</a></li>
+                                                        </ul></li>
+                                                        <li><a href="#foogestione-di-progetto"><span class="toc-section-number">3.2</span> Gestione di Progetto</a></li>
+                                                        <li><a href="#foochap:CI"><span class="toc-section-number">3.3</span> Continuous Integration e Automatizzazione</a>
+                                                        <ul>
+                                                        <li><a href="#foorelazione-di-progetto"><span class="toc-section-number">3.3.1</span> Relazione di Progetto</a></li>
+                                                        <li><a href="#fooprogetto"><span class="toc-section-number">3.3.2</span> Progetto</a></li>
+                                                        </ul></li>
+                                                        </ul></li>
+                                                        <li><a href="#fooanalisi-dei-requisiti"><span class="toc-section-number">4</span> Analisi dei Requisiti</a>
+                                                        <ul>
+                                                        <li><a href="#foorequisiti-di-business"><span class="toc-section-number">4.1</span> Requisiti di Business</a></li>
+                                                        <li><a href="#foorequisiti-utente"><span class="toc-section-number">4.2</span> Requisiti Utente</a>
+                                                        <ul>
+                                                        <li><a href="#foouser-stories"><span class="toc-section-number">4.2.1</span> User stories</a></li>
+                                                        </ul></li>
+                                                        <li><a href="#foorequisiti-funzionali"><span class="toc-section-number">4.3</span> Requisiti Funzionali</a>
+                                                        <ul>
+                                                        <li><a href="#foocasi-duso"><span class="toc-section-number">4.3.1</span> Casi d&#x2019;uso</a></li>
+                                                        <li><a href="#fooapplicativo-web"><span class="toc-section-number">4.3.2</span> Applicativo web</a></li>
+                                                        </ul></li>
+                                                        <li><a href="#foorequisiti-non-funzionali"><span class="toc-section-number">4.4</span> Requisiti non Funzionali</a>
+                                                        <ul>
+                                                        <li><a href="#foodi-sistema"><span class="toc-section-number">4.4.1</span> Di Sistema</a></li>
+                                                        </ul></li>
+                                                        <li><a href="#foorequisiti-implementativi"><span class="toc-section-number">4.5</span> Requisiti Implementativi</a>
+                                                        <ul>
+                                                        <li><a href="#foometodologie-e-tecnologie-utilizzate"><span class="toc-section-number">4.5.1</span> Metodologie e Tecnologie Utilizzate</a></li>
+                                                        </ul></li>
+                                                        </ul></li>
+                                                        <li><a href="#foodesign-architetturale"><span class="toc-section-number">5</span> Design Architetturale</a>
+                                                        <ul>
+                                                        <li><a href="#fooarchitettura-generale"><span class="toc-section-number">5.1</span> Architettura Generale</a></li>
+                                                        <li><a href="#fooscelte-tecnologiche-cruciali"><span class="toc-section-number">5.2</span> Scelte Tecnologiche Cruciali</a></li>
+                                                        <li><a href="#foopattern-architetturali-utilizzati"><span class="toc-section-number">5.3</span> Pattern Architetturali Utilizzati</a>
+                                                        <ul>
+                                                        <li><a href="#fooclient-server"><span class="toc-section-number">5.3.1</span> Client-Server</a></li>
+                                                        <li><a href="#foopublish-subscribe"><span class="toc-section-number">5.3.2</span> Publish-Subscribe</a></li>
+                                                        </ul></li>
+                                                        </ul></li>
+                                                        <li><a href="#foodesign-di-dettaglio"><span class="toc-section-number">6</span> Design di Dettaglio</a></li>
+                                                        <li><a href="#fooimplementazione"><span class="toc-section-number">7</span> Implementazione</a>
+                                                        <ul>
+                                                        <li><a href="#fooserver"><span class="toc-section-number">7.1</span> Server</a></li>
+                                                        <li><a href="#fooclient"><span class="toc-section-number">7.2</span> Client</a></li>
+                                                        <li><a href="#foocentralina"><span class="toc-section-number">7.3</span> Centralina</a></li>
+                                                        </ul></li>
+                                                        <li><a href="#footesting-e-performance"><span class="toc-section-number">8</span> Testing e Performance</a></li>
+                                                        <li><a href="#fooanalisi-di-deployment-su-larga-scala"><span class="toc-section-number">9</span> Analisi di Deployment su Larga Scala</a></li>
+                                                        <li><a href="#foopiano-di-lavoro"><span class="toc-section-number">10</span> Piano di lavoro</a></li>
+                                                        <li><a href="#foosprints"><span class="toc-section-number">11</span> Sprints</a>
+                                                        <ul>
+                                                        <li><a href="#foosvolgimento"><span class="toc-section-number">11.1</span> Svolgimento</a></li>
+                                                        <li><a href="#foosprint-0"><span class="toc-section-number">11.2</span> Sprint 0</a></li>
+                                                        </ul></li>
+                                                        <li><a href="#fooconclusioni"><span class="toc-section-number">12</span> Conclusioni</a>
+                                                        <ul>
+                                                        <li><a href="#foosviluppi-futuri">Sviluppi Futuri</a></li>
+                                                        </ul></li>
+                                                        </ul>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-width-medium-3-4">
+<section id="foointroduzione" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduzione</h1>
+<p>Weather Vortex &#xE8; un progetto che nasce con l&#x2019;intento di fornire all&#x2019;utente un unico servizio per consultare e paragonare diverse previsioni meteo. L&#x2019;obbiettivo verr&#xE0; raggiunto mediante la creazione di una <strong>piattaforma web</strong> che possa, da un lato, <strong>facilitare le decisioni dell&#x2019;utente</strong>, dall&#x2019;altro <strong>fornire un&#x2019;esperienza personalizzata</strong>.</p>
+<section id="foooverview" class="level2" data-number="1.1">
+<h2 data-number="1.1"><span class="header-section-number">1.1</span> Overview</h2>
+<figure>
+<img src="Images/logo.png" id="foofig:Logo" style="width:80.0%" alt="Il logo della piattaforma" /><figcaption aria-hidden="true">Il logo della piattaforma</figcaption>
+</figure>
+</section>
+<section id="fooproblemi" class="level2" data-number="1.2">
+<h2 data-number="1.2"><span class="header-section-number">1.2</span> Problemi</h2>
+<p>Normalmente un utente consulta in media 3 / 4 siti meteo ogni mese per farsi un&#x2019;idea precisa delle previsioni. Questo comporta un dispendio di tempo e risorse nel consultare pi&#xF9; fonti, quando un aggregatore potrebbe fare tutto in automatico.</p>
+<p>I principali problemi che vengono attualmente riscontrati sono i seguenti:</p>
+<ul>
+<li><p><strong>Diverse Fonti:</strong> l&#x2019;utente consulta pi&#xF9; fonti, non fidandosi di un singolo parere.</p></li>
+<li><p><strong>Affidabilit&#xE0;:</strong> l&#x2019;utente deve tenere a mente l&#x2019;affidabilit&#xE0; dei singoli siti e/o calcolarne approssimativamente il peso.</p></li>
+<li><p><strong>Customizzazione:</strong> l&#x2019;utente non ha possibilit&#xE0; nei siti pi&#xF9; famosi di impostare una propria centralina meteo da accompagnare alle previsioni tradizionali.</p></li>
+</ul>
+</section>
+<section id="fooobiettivi" class="level2" data-number="1.3">
+<h2 data-number="1.3"><span class="header-section-number">1.3</span> Obiettivi</h2>
+<p>L&#x2019;obiettivo consiste nel fornire all&#x2019;utente un servizio omnicomprensivo per le previsioni meteo.</p>
+<p>Nello specifico si vogliono incontrare le esigenze di chi lo fruisce, agevolando le operazioni di:</p>
+<ul>
+<li><p><strong>Osservazione delle previsioni</strong> fino a 5 giorni</p></li>
+<li><p><strong>Registrazionie di un account</strong> che permette di salvare le preferenze</p></li>
+<li><p><strong>Registrazionie di una centralina</strong> che permetta di avere dati personalizzati</p></li>
+</ul>
+</section>
+</section>
+<section id="foostato-dellarte" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Stato dell&#x2019;Arte</h1>
+<p>Il topic scelto in letteratura ha ricevuto molte attenzioni per via della stessa natura delle previsioni meteo, fortemente legate al machine learning. Tuttavia per quanto riguarda l&#x2019;aggregazione di esse non risultano presenti particolari ricerche. Dalle informazioni che abbiamo raccolto su studi e applicazione di <strong>idee similari</strong> alla nostra &#xE8; emerso quanto segue:</p>
+<ul>
+<li><p><strong>Aggregazione</strong>: sono presenti alcuni siti similari ma offrono funzionalit&#xE0; molto limitate, &#xE8; possibile vedere solo le previsioni odierne o &#xE8; impossibile avere un account che permetta di sceliere quanta fiducia dare a diversi servizi.</p></li>
+<li><p><strong>Personalizzazione</strong>: non sono presenti siti, se non prototipali, che permettano di registrare una centralina personale da aggiungere alle fonti per le previsioni.</p></li>
+</ul>
+</section>
+<section id="fooprocesso-di-sviluppo" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Processo di Sviluppo</h1>
+<section id="foometodologia-di-sviluppo" class="level2" data-number="3.1">
+<h2 data-number="3.1"><span class="header-section-number">3.1</span> Metodologia di Sviluppo</h2>
+<p>Per sviluppare il progetto &#xE8; stata utilizzato il framework Scrum.</p>
+<section id="fooscrum" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1"><span class="header-section-number">3.1.1</span> Scrum</h3>
+</section>
+</section>
+<section id="foogestione-di-progetto" class="level2" data-number="3.2">
+<h2 data-number="3.2"><span class="header-section-number">3.2</span> Gestione di Progetto</h2>
+<p>In questa sezione viene dettagliatamente spiegato come il progetto &#xE8; stato organizzato. Gli strumenti e tecnologie con cui &#xE8; scelto di procedere verranno elencati assieme alla descrizione della metodologia.</p>
+<section id="foogantt-chart" class="level5" data-number="3.2.0.0.1">
+<h5 data-number="3.2.0.0.1"><span class="header-section-number">3.2.0.0.1</span> Gantt Chart</h5>
+</section>
+<section id="foolicensing" class="level5" data-number="3.2.0.0.2">
+<h5 data-number="3.2.0.0.2"><span class="header-section-number">3.2.0.0.2</span> Licensing</h5>
+<p>P</p>
+</section>
+<section id="fooversioning" class="level5" data-number="3.2.0.0.3">
+<h5 data-number="3.2.0.0.3"><span class="header-section-number">3.2.0.0.3</span> Versioning</h5>
+</section>
+<section id="foogithub-projects-management" class="level5" data-number="3.2.0.0.4">
+<h5 data-number="3.2.0.0.4"><span class="header-section-number">3.2.0.0.4</span> GitHub Projects Management</h5>
+<p>descrizione GitHub Projects boards</p>
+</section>
+<section id="footelegram" class="level5" data-number="3.2.0.0.5">
+<h5 data-number="3.2.0.0.5"><span class="header-section-number">3.2.0.0.5</span> Telegram</h5>
+</section>
+<section id="foodiscordmicrosoft-teams" class="level5" data-number="3.2.0.0.6">
+<h5 data-number="3.2.0.0.6"><span class="header-section-number">3.2.0.0.6</span> Discord/Microsoft Teams</h5>
+</section>
+</section>
+<section id="foochap:CI" class="level2" data-number="3.3">
+<h2 data-number="3.3"><span class="header-section-number">3.3</span> Continuous Integration e Automatizzazione</h2>
+<p>In questo capitolo si analizza la parte di integrazione e automatizzazione sia del progetto software che della relazione.</p>
+<section id="foorelazione-di-progetto" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1"><span class="header-section-number">3.3.1</span> Relazione di Progetto</h3>
+<p>descrizione CI della relazione da Overleaf a GitHub action e la release</p>
+</section>
+<section id="fooprogetto" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2"><span class="header-section-number">3.3.2</span> Progetto</h3>
+<p>CI implementata per il testing</p>
+</section>
+</section>
+</section>
+<section id="fooanalisi-dei-requisiti" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Analisi dei Requisiti</h1>
+<p>In questa fase sono stati individuati i <strong>requisiti del sistema</strong>, partendo dalle descrizioni di alto livello, ottenute dal committente durante il <strong>knowledge crunching e i focus group</strong>. Successivamente si &#xE8; proceduto con un raffinamento che ha portato alla definizione di requisiti pi&#xF9; <strong>specifici</strong>, <strong>chiari</strong> e <strong>strutturati</strong>.</p>
+<section id="foorequisiti-di-business" class="level2" data-number="4.1">
+<h2 data-number="4.1"><span class="header-section-number">4.1</span> Requisiti di Business</h2>
+<p>Si definiscono di seguito le aspettative del cliente e i requisiti che il prodotto dovr&#xE0; soddisfare, espressi con una terminologia ad elevato livello astrattivo.</p>
+<ul>
+<li><p>L&#x2019;applicativo dovr&#xE0; <strong>ridurre il tempo necessario</strong> per consultare pi&#xF9; previsioni.</p></li>
+<li><p>Il prodotto dovr&#xE0; ...</p></li>
+<li><p>Opzionalmente il prodotto dovr&#xE0; <strong>...</strong></p></li>
+</ul>
+</section>
+<section id="foorequisiti-utente" class="level2" data-number="4.2">
+<h2 data-number="4.2"><span class="header-section-number">4.2</span> Requisiti Utente</h2>
+<p>Di seguito vengono riportate le richieste mosse dal cliente in maniera informale evitando termini tecnici, successivamente tali richieste saranno formalizzate per quanto possibile. Il prodotto dovr&#xE0; fornire:</p>
+<ul>
+<li><p>l&#x2019;accesso al sistema da <strong>qualunque dispositivo</strong> munito di connessione alla rete, anche mobile o tablet</p></li>
+<li><p><strong>prestazioni adeguate</strong> per il caricamento</p></li>
+<li><p>un interfaccia intuitiva</p></li>
+<li><p>account</p></li>
+<li><p>possibilit&#xE0; di registrare una centralina</p></li>
+</ul>
+<section id="foouser-stories" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1"><span class="header-section-number">4.2.1</span> User stories</h3>
+<p>Di seguito sono riportate tutte le <strong>user stories</strong> formulate assieme agli utilizzatori</p>
+<ul>
+<li><p>Come <strong>utente</strong> voglio:</p>
+<ul>
+<li><p>poter <strong>visualizzare</strong> le previsioni odierne</p></li>
+<li><p>poter <strong>visualizzare</strong> le previsioni relative ai prossimi giorni</p></li>
+<li><p>voglio poter <strong>impostare</strong> la fiducia per ogni servizio usato</p></li>
+<li><p>poter <strong>aggiungere un device</strong></p></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="foorequisiti-funzionali" class="level2" data-number="4.3">
+<h2 data-number="4.3"><span class="header-section-number">4.3</span> Requisiti Funzionali</h2>
+<p>Di seguito si riportano i requisiti non funzionali:</p>
+<section id="foocasi-duso" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1"><span class="header-section-number">4.3.1</span> Casi d&#x2019;uso</h3>
+<p>Diagramma dei casi d&#x2019;uso</p>
+</section>
+<section id="fooapplicativo-web" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2"><span class="header-section-number">4.3.2</span> Applicativo web</h3>
+<p>L&#x2019;applicativo web deve consentire ad ogni utente di accedere con una serie di credenziali, e dividere le operazioni consentite in base ai permessi concessi. Il sito &#xE8; suddiviso pagine :</p>
+<ul>
+<li><p><strong>pagina di login</strong> La pagina utilizzata per effettuare l&#x2019;accesso</p></li>
+<li><p><strong>home</strong> La pagina principale in cui &#xE8; possibile:</p>
+<ul>
+<li><p>accedere</p></li>
+<li><p>registrarsi</p></li>
+<li><p>consultare le previsioni</p></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="foorequisiti-non-funzionali" class="level2" data-number="4.4">
+<h2 data-number="4.4"><span class="header-section-number">4.4</span> Requisiti non Funzionali</h2>
+<p>Il sistema dovr&#xE0; rispettare i seguenti requisiti non funzionali per un&#x2019;alta <strong>qualit&#xE0;</strong>:</p>
+<section id="foodi-sistema" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1"><span class="header-section-number">4.4.1</span> Di Sistema</h3>
+<ul>
+<li><p><strong>Reattivit&#xE0;</strong>:</p>
+<ul>
+<li><p>l&#x2019;utente non deve percepire <strong>ritardi</strong></p></li>
+<li><p>le notifiche devono ..</p></li>
+</ul></li>
+<li><p><strong>Scalabilit&#xE0;</strong>: L&#x2019;applicativo deve necessariamente consentire di aumentare o diminuire il numero di utenti gestiti senza particolari problemi.</p></li>
+</ul>
+</section>
+</section>
+<section id="foorequisiti-implementativi" class="level2" data-number="4.5">
+<h2 data-number="4.5"><span class="header-section-number">4.5</span> Requisiti Implementativi</h2>
+<p>Si definiscono i vincoli a livello tecnologico e di implementazione che sar&#xE0; necessario rispettare nella realizzazione dell&#x2019;applicativo.</p>
+<section id="foometodologie-e-tecnologie-utilizzate" class="level3" data-number="4.5.1">
+<h3 data-number="4.5.1"><span class="header-section-number">4.5.1</span> Metodologie e Tecnologie Utilizzate</h3>
+<p>In quanto progetto sviluppato per l&#x2019;esame di Applicazioni e Servizi Web &#xE8; necessario che le tecnologie usate rispettino gli standard di insegnamento.</p>
+</section>
+</section>
+</section>
+<section id="foodesign-architetturale" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Design Architetturale</h1>
+<p>fase di Design Architetturale.</p>
+<section id="fooarchitettura-generale" class="level2" data-number="5.1">
+<h2 data-number="5.1"><span class="header-section-number">5.1</span> Architettura Generale</h2>
+<p>L&#x2019;architettura generale del sistema &#xE8; ...</p>
+</section>
+<section id="fooscelte-tecnologiche-cruciali" class="level2" data-number="5.2">
+<h2 data-number="5.2"><span class="header-section-number">5.2</span> Scelte Tecnologiche Cruciali</h2>
+<p>Di seguito alcune scelte tecnologiche cruciali</p>
+</section>
+<section id="foopattern-architetturali-utilizzati" class="level2" data-number="5.3">
+<h2 data-number="5.3"><span class="header-section-number">5.3</span> Pattern Architetturali Utilizzati</h2>
+<section id="fooclient-server" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1"><span class="header-section-number">5.3.1</span> Client-Server</h3>
+<p>pattern client-server</p>
+</section>
+<section id="foopublish-subscribe" class="level3" data-number="5.3.2">
+<h3 data-number="5.3.2"><span class="header-section-number">5.3.2</span> Publish-Subscribe</h3>
+<p>pattern publish-subscribe</p>
+</section>
+</section>
+</section>
+<section id="foodesign-di-dettaglio" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Design di Dettaglio</h1>
+</section>
+<section id="fooimplementazione" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Implementazione</h1>
+<section id="fooserver" class="level2" data-number="7.1">
+<h2 data-number="7.1"><span class="header-section-number">7.1</span> Server</h2>
+<p>Implementazione del server</p>
+</section>
+<section id="fooclient" class="level2" data-number="7.2">
+<h2 data-number="7.2"><span class="header-section-number">7.2</span> Client</h2>
+<p>Implementazione del client</p>
+</section>
+<section id="foocentralina" class="level2" data-number="7.3">
+<h2 data-number="7.3"><span class="header-section-number">7.3</span> Centralina</h2>
+<p>Implementazione centralina</p>
+</section>
+</section>
+<section id="footesting-e-performance" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Testing e Performance</h1>
+</section>
+<section id="fooanalisi-di-deployment-su-larga-scala" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Analisi di Deployment su Larga Scala</h1>
+</section>
+<section id="foopiano-di-lavoro" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Piano di lavoro</h1>
+<p>Il lavoro &#xE8; stato svolto utilizzando un approccio Scrum, con quattro sprint, pi&#xF9; uno iniziale incentrato sullo studio delle tecnologie.</p>
+<figure>
+<img src="DrawIo/GanttChart.png" id="foofig:Gantt" style="width:100.0%" alt="Gantt Chart" /><figcaption aria-hidden="true">Gantt Chart</figcaption>
+</figure>
+</section>
+<section id="foosprints" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Sprints</h1>
+<section id="foosvolgimento" class="level2" data-number="11.1">
+<h2 data-number="11.1"><span class="header-section-number">11.1</span> Svolgimento</h2>
+<p>Gli sprint sono stati portati avanti nel seguente modo:</p>
+<section id="foosprint-planning" class="level5" data-number="11.1.0.0.1">
+<h5 data-number="11.1.0.0.1"><span class="header-section-number">11.1.0.0.1</span> Sprint Planning</h5>
+<p>Pianificazione a inizio sprint degli obiettivi, tempistiche e responsabilit&#xE0; nel periodo dello sprint corrente. Diviso in due parti:</p>
+<ul>
+<li><p><strong>parte 1</strong> Viene raffinato e rivisto il product backlog, viene effettuata la scelta dello sprint goal (what).</p></li>
+<li><p><strong>parte 2</strong> Si decidono gli item e viene raffinato come implementarli (how). Effettuato con solo il team senza la figura del product owner</p></li>
+</ul>
+</section>
+<section id="fooiterativo-daily-scrum" class="level5" data-number="11.1.0.0.2">
+<h5 data-number="11.1.0.0.2"><span class="header-section-number">11.1.0.0.2</span> [Iterativo] Daily scrum</h5>
+<p>Breve meeting svolto giornalmente. Viene utilizzato per gli aggiornamenti sull&#x2019;andamento del progetto, senza scendere nei dettagli implementativi.</p>
+</section>
+<section id="foooccasionale-pair-programming" class="level5" data-number="11.1.0.0.3">
+<h5 data-number="11.1.0.0.3"><span class="header-section-number">11.1.0.0.3</span> [Occasionale] Pair Programming </h5>
+<p>Utilizzato per risolvere problemi che causano il blocco di un componente del team per parecchio tempo su una issue.</p>
+</section>
+<section id="foomeeting-finale" class="level5" data-number="11.1.0.0.4">
+<h5 data-number="11.1.0.0.4"><span class="header-section-number">11.1.0.0.4</span> Meeting finale</h5>
+<p>Riflessioni e considerazioni finali sullo spint passato. Suggerimenti per migliorare il prossimo. Diviso in tre parti:</p>
+<ul>
+<li><p><strong>Product backlog refinement</strong> aggiunta di dettagli e riordino del product backlog</p></li>
+<li><p><strong>Sprint review</strong> &#xE8; stato ispezionato l&#x2019;incremento, il Minimum Viable Product o di risultati sul processo. Discernere cosa &#xE8; stato fatto e cosa no</p></li>
+<li><p><strong>Retrospettiva</strong> Considerazioni sul team stesso e sui miglioramenti per il prossimo sprint.</p></li>
+</ul>
+</section>
+</section>
+<section id="foosprint-0" class="level2" data-number="11.2">
+<h2 data-number="11.2"><span class="header-section-number">11.2</span> Sprint 0</h2>
+<p>All&#x2019;interno dello sprint 0 il focus &#xE8; stato ...</p>
+<section id="foodeliverables" class="level5" data-number="11.2.0.0.1">
+<h5 data-number="11.2.0.0.1"><span class="header-section-number">11.2.0.0.1</span> Deliverables</h5>
+<ul>
+<li><p>architettura base server</p></li>
+<li><p>scheletro relazione</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="fooconclusioni" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Conclusioni</h1>
+<section id="foosviluppi-futuri" class="level2 unnumbered">
+<h2 class="unnumbered">Sviluppi Futuri</h2>
+<div id="foorefs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="fooref-yolov3" class="csl-entry" role="doc-biblioentry">
+Redmon, Joseph, e Ali Farhadi. 2018. <span>&#xAB;YOLOv3: An Incremental Improvement&#xBB;</span>. <em>arXiv</em>. <a href="https://pjreddie.com/media/files/papers/YOLOv3.pdf">https://pjreddie.com/media/files/papers/YOLOv3.pdf</a>.
+</div>
+</div>
+</section>
+</section>                    
+                </div>
+            </div>
+
+            <script src="https://vjs.zencdn.net/5.4.4/video.js"></script>
+        </div>
+    </body>
+</html>
