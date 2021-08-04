@@ -109,12 +109,15 @@ coltitle=black,center title}}
 \newcounter{Site}
 \setcounter{Site}{1}
 
-\ifthenelse{\value{Site}=1}{ 
     \title{\LARGE
-        RELAZIONE DI PROGETTO  \\ DI \\ “APPLICAZIONI E SERVIZI WEB” \\
-        \hrulefill \\
+        \ifthenelse{\value{Site}=1}{ 
+            RELAZIONE DI PROGETTO  \\ DI \\ “APPLICAZIONI E SERVIZI WEB” \\
+            \hrulefill \\
+        }
         Weather Vortex \\ 
-        \hrulefill \\
+        \ifthenelse{\value{Site}=1}{ 
+            \hrulefill \\
+        }
     }
     \author{
         Zandoli Silvia \\ \emailaddr{silvia.zandoli2@studio.unibo.it} 
@@ -124,7 +127,6 @@ coltitle=black,center title}}
         Lirussi Igor \\ \emailaddr{igor.lirussi@studio.unibo.it}
         \\ \\ \\ 
     }
-}
 
 
 \date{\today}
