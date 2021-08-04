@@ -1,0 +1,82 @@
+% -*- root: ../main.tex -*-
+
+% In questa sezione esporre brevemente i requisiti a cui il sistema proposto deve rispondere, concentrando l'attenzione sugli aspetti più rilevanti e facendo eventualmente uso di opportuni diagrammi di alto livello.
+
+\chapter{Analisi dei Requisiti}
+In questa fase sono stati individuati i \textbf{requisiti del sistema}, partendo dalle descrizioni di alto livello, ottenute dal committente durante il \textbf{knowledge crunching e i focus group}. Successivamente si è proceduto con un raffinamento che ha portato alla definizione di requisiti più \textbf{specifici}, \textbf{chiari} e \textbf{strutturati}.
+	
+	\section{Requisiti di Business}
+	Si definiscono di seguito le aspettative del cliente e i requisiti che il prodotto dovrà soddisfare, espressi con una terminologia ad elevato livello astrattivo.
+        \begin{itemize}
+            \item L'applicativo dovrà \textbf{ridurre il tempo necessario} per consultare più previsioni.
+            \item Il prodotto dovrà ...
+            \item Opzionalmente il prodotto dovrà \textbf{...} 
+        \end{itemize}
+	
+	\section{Requisiti Utente}
+	Di seguito vengono riportate le richieste mosse dal cliente in maniera informale evitando termini tecnici, successivamente tali richieste saranno formalizzate per quanto possibile.
+	Il prodotto dovrà fornire: 
+		\begin{itemize}
+            \item l'accesso al sistema da \textbf{qualunque dispositivo} munito di connessione alla rete, anche mobile o tablet
+            \item \textbf{prestazioni adeguate} per il caricamento
+            \item un interfaccia intuitiva
+            \item account
+            \item possibilità di registrare una centralina
+        \end{itemize}
+        \subsection{User stories}
+        Di seguito sono riportate tutte le \textbf{user stories} formulate assieme agli utilizzatori
+        \begin{itemize}
+            \item Come \textbf{utente}
+            voglio:
+            \begin{itemize}
+                \item poter \textbf{visualizzare} le previsioni odierne
+                \item poter \textbf{visualizzare} le previsioni relative ai prossimi giorni
+                \item voglio poter \textbf{impostare} la fiducia per ogni servizio usato
+                \item poter \textbf{aggiungere un device} 
+                
+            \end{itemize}
+        \end{itemize}
+            
+	    
+	\section{Requisiti Funzionali} %obbligatori, desiderabili e opzionali
+	Di seguito si riportano i requisiti non funzionali:
+	    \subsection{Casi d'uso}
+        	 Diagramma dei casi d'uso
+                    
+        \subsection{Applicativo web}
+        L'applicativo web deve consentire ad ogni utente di accedere con una serie di credenziali, e dividere le operazioni consentite in base ai permessi concessi.
+        Il sito è suddiviso pagine :
+        \begin{itemize}
+            \item \textbf{pagina di login}
+                La pagina utilizzata per effettuare l'accesso
+            \item \textbf{home}
+                La pagina principale in cui è possibile:
+                \begin{itemize}
+                    \item accedere
+                    \item registrarsi
+                    \item consultare le previsioni
+                \end{itemize}
+            
+        \end{itemize}
+        
+    
+        
+	\section{Requisiti non Funzionali}	
+    Il sistema dovrà rispettare i seguenti requisiti non funzionali per un'alta \textbf{qualità}:
+        \subsection{Di Sistema}
+            \begin{itemize}
+                \item \textbf{Reattività}: 
+                    \begin{itemize}
+                        \item l'utente non deve percepire \textbf{ritardi} 
+                        \item le notifiche devono ..
+                    \end{itemize}
+                \item \textbf{Scalabilità}: L'applicativo deve necessariamente consentire di aumentare o diminuire il numero di utenti gestiti senza particolari problemi. 
+            \end{itemize}
+        
+
+	\section{Requisiti Implementativi}
+	Si definiscono i vincoli a livello tecnologico e di implementazione che sarà necessario rispettare nella realizzazione dell'applicativo.
+	
+	\subsection{Metodologie e Tecnologie Utilizzate}
+	In quanto progetto sviluppato per l'esame di Applicazioni e Servizi Web è necessario che le tecnologie usate rispettino gli standard di insegnamento. 
+	

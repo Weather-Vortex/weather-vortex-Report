@@ -1,0 +1,207 @@
+name: LateX Build
+on:
+  push:
+    branches: [ main ]
+    tags:
+      - '**'
+  workflow_dispatch:
+jobs:
+  BuildLatexJob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Git repo
+        uses: actions/checkout@v2
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex
+          pre_compile: "tlmgr update --self --all"
+          args: "-pdf -jobname=WeatherVorex-Report -file-line-error -halt-on-error -interaction=nonstopmode -logfilewarninglist -Werror"
+          post_compile: "latexmk -c"
+      - name: Split log
+        if: failure()
+        shell: bash
+        run: cat main.log | grep -n -E 'LaTeX Error|LaTeX Warning|Undefined' > small.log
+      - name: Upload Logs
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: Logs
+          path: |
+            main.log
+            small.log 
+      - name: Print small log
+        if: failure()
+        shell: bash
+        run: cat small.log >&2
+      - name: Upload Artifacts
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: Artifacts
+          path: |
+            WeatherVorex-Report.pdf
+          
+  TelegramJobFailure:
+      needs: [BuildLatexJob] #when finished 
+      if: failure() # if its failed
+      runs-on: ubuntu-latest
+      steps:
+      - name: Clone Repo with Checkout 
+        uses: actions/checkout@v2
+      - name: Download Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: Logs
+      - name: Send custom Telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+              ${{ github.event_name }} event,
+                on github.com/${{ github.repository }}, 
+                by ${{ github.actor }}:
+                <b>${{ github.event.head_commit.message }}</b>
+               ❌ <b>FAILED</b> ❌
+          format: html
+          disable_web_page_preview: true
+          document: small.log
+            
+  FindTagJob:
+    needs: BuildLatexJob
+    if: success()
+    runs-on: ubuntu-latest
+    outputs:
+      outputTagJob: '${{ steps.release_msg.outputs.RELEASE_NAME }}' #The outuput of the job
+    steps:
+      - name: Clone Repo with Checkout
+        uses: actions/checkout@v2
+      - name: Extract release message if present
+        shell: bash
+        id: extract_tag_msg
+        run: >
+          echo "::set-output name=TAG_MSG::$(echo
+          "${{github.event.head_commit.message}}" | grep -o -P
+          '(?<=-TAG{).*(?=})')" #Extract tag name if present
+      - name: Fetch tag
+        shell: bash
+        run: |
+          git fetch --prune --unshallow --tags #Pull all tags
+      - name: Fill tag if empty
+        id: release_msg
+        shell: bash
+        run: |
+          if [ "${{steps.extract_tag_msg.outputs.TAG_MSG}}" != "" ] #Check if the user has specified a name for the tag
+          then #if yes use it
+              echo "::set-output name=RELEASE_NAME::$(echo ${{steps.extract_tag_msg.outputs.TAG_MSG}})" 
+          else #if generate one new tag incrementing fixes number like x.y.z+1
+              val=$(git describe --tags --abbrev=0)
+              newval=$(echo ${val##*.})
+              newval=$((newval+1))
+              newval="${val%.*}.$newval"
+              echo "::set-output name=RELEASE_NAME::$(echo $newval)"
+              echo $newval 
+          fi
+          
+  DeployJob:
+    needs: FindTagJob
+    if: '${{ needs.FindTagJob.outputs.outputTagJob != '''' }}'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Repo with Checkout
+        uses: actions/checkout@v2
+      - name: Create release if tag commit contain a tag message
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+        with:
+          tag_name: '${{ needs.FindTagJob.outputs.outputTagJob }}'
+          release_name: 'Release ${{ needs.FindTagJob.outputs.outputTagJob }}'
+          draft: falses
+          prerelease: false
+      - name: Download Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: Artifacts
+      - name: Upload Release Asset
+        if: success()
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./WeatherVorex-Report.pdf
+          asset_name: WeatherVorex-Report.pdf
+          asset_content_type: Release pdf
+
+
+  TelegramJobDeploy:
+      needs: [DeployJob]
+      if: success() 
+      runs-on: ubuntu-latest
+      steps:
+      - name: Clone Repo with Checkout 
+        uses: actions/checkout@v2 
+      - name: Download Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: Artifacts
+      - name: Send custom Telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+              ${{ github.event_name }} event,
+              on github.com/${{ github.repository }}, 
+              by ${{ github.actor }}:
+              <b>${{ github.event.head_commit.message }}</b>
+              ✅ <b>SUCCEDED</b>
+          format: html
+          disable_web_page_preview: true
+          document: |
+            WeatherVorex-Report.pdf
+          
+  PandocConverter:
+    needs: DeployJob
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone git repo
+        uses: actions/checkout@v2
+      - name: Setup git repo 
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git fetch --all
+      - name: Clone Pandoc dependency 
+        run: |
+          git clone https://github.com/SmartDogHouse/pandoc-uikit.git
+      - name: Pandoc tex conversion
+        uses: docker://pandoc/latex:latest
+        with:
+          args: >-
+            -d ./pandoc-uikit/config.yaml 
+            -o ./index.html 
+            main.tex
+      - name: Commit the new gh-pages html
+        run: |
+          git add ./index.html
+          git commit -m "Invisible commit"
+          rm -rdf pandoc-uikit/.git*
+          git clean -fxd
+          git checkout gh-pages
+          git rm -rf .
+          git clean -fxd
+          git clone https://github.com/SmartDogHouse/pandoc-uikit.git
+          rm -rdf pandoc-uikit/.git*
+          git checkout main DrawIo
+          git checkout main Images
+          git checkout main Miro
+          git checkout main index.html
+          git status
+          # git cherry-pick main, alternatives
+          git add .
+          git commit -m 'Updated gh-pages'
+          git push

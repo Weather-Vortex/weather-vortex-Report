@@ -1,0 +1,153 @@
+\documentclass{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{longtable}
+\usepackage{graphicx}
+ \usepackage{array}
+ \usepackage{caption}
+ \usepackage{graphicx}
+ \usepackage{rotating}
+ \usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{color}
+\usepackage{multicol}
+\tcbuselibrary{skins}
+%\usepackage[italian]{babel}
+
+%Disable all warnings issued by latex starting with "You have..."
+\usepackage{silence}
+\WarningFilter{latex}{You have requested package}
+\pdfsuppresswarningpagegroup=1
+
+%Bib
+\usepackage[
+backend=biber,
+style=alphabetic,
+sorting=ynt
+]{biblatex}
+\addbibresource{References.bib}
+
+\usepackage{csquotes}
+%\usepackage{natbib}
+
+
+%Import
+
+\usepackage{tabularx}
+\usepackage{marvosym}
+\usepackage{fancyvrb}
+%\usepackage[usenames]{color}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+\usepackage{caption}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{indentfirst}
+\usepackage{listings}
+\usepackage{tocloft}
+\usepackage{ifthen}
+%\usepackage[most]{tcolorbox}
+\usepackage{pgfplots}
+%\usepackage{Style/pgfplotsthemetol}
+
+\pgfplotsset{compat=1.16}
+\definecolor{lstgrey}{rgb}{0.94,0.95,1}
+\lstset{
+    language=python,
+    backgroundcolor=\color{lstgrey},
+    frame=single,
+    rulecolor=\color{lstgrey}, % make frame "invisible"
+    captionpos=t,
+    tabsize=2,
+    numberbychapter=false,
+    showstringspaces=false,
+    basicstyle=\footnotesize,
+    breaklines=true,
+}
+%LINK CLICCABILI
+\hypersetup{
+    colorlinks = true,
+    linkcolor = .,
+    citecolor = {blue},
+    linkbordercolor = {white},
+    urlcolor = {blue},
+}
+%TABELLE TBCOLORBOX
+\tcbset{
+        enhanced,
+        colback=red!5!white,
+        boxrule=0.1pt,
+        colframe=red!75!black,
+        fonttitle=\bfseries
+       }
+       
+%TAB2
+\newcolumntype{Y}{>{\raggedleft\arraybackslash}X}
+
+\tcbset{tab1/.style={fonttitle=\bfseries\large,fontupper=\normalsize\sffamily,
+colback=yellow!10!white,colframe=red!75!black,colbacktitle=Salmon!40!white,
+coltitle=black,center title,freelance,frame code={
+\foreach \n in {north east,north west,south east,south west}
+{\path [fill=red!75!black] (interior.\n) circle (3mm); };},}}
+
+\tcbset{tab2/.style={enhanced,fonttitle=\bfseries,fontupper=\normalsize\sffamily,
+colback=yellow!10!white,colframe=red!50!black,colbacktitle=Salmon!40!white,
+coltitle=black,center title}}
+
+%PATH IMMAGINI
+\graphicspath{{Images/}{DrawIo/}}
+\newcommand{\emailaddr}[1]{\href{mailto:#1}{\texttt{#1}}}
+
+
+    \title{\LARGE
+        RELAZIONE DI PROGETTO  \\ DI \\ “APPLICAZIONI E SERVIZI WEB” \\
+        \hrulefill \\
+        Weather Vortex \\ 
+        \hrulefill \\
+    }
+    \author{
+        Zandoli Silvia \\ \emailaddr{silvia.zandoli2@studio.unibo.it} 
+        \and 
+        Tentoni Daniele \\ \emailaddr{daniele.tentoni2@studio.unibo.it}
+        \and
+        Lirussi Igor \\ \emailaddr{igor.lirussi@studio.unibo.it}
+        \\ \\ \\ 
+    }
+
+
+
+\date{\today}
+
+
+\begin{document}
+\maketitle
+\include{Tex/Abstract}
+\tableofcontents
+
+% CONTENUTI
+    \include{Tex/Intro}
+    \include{Tex/StateOfTheArt}
+    \include{Tex/DevProcess}
+    \include{Tex/AnalysisRequirements}
+    \include{Tex/ArchitecturalDesign}
+    \include{Tex/DetailDesign}
+    \include{Tex/Implementation}
+    \include{Tex/TestingAndPerformance}
+    \include{Tex/LargeScaleDeployment}
+    \include{Tex/WorkPlan}
+    \include{Tex/Sprints}
+    \include{Tex/Conclusion}
+
+
+\nocite{*} % Includes all references from the `references.bib` file
+\printbibliography[title={Bibliografia completa}]
+
+\end{document}
