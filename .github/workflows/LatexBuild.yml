@@ -198,7 +198,6 @@ jobs:
           rm -rdf pandoc-uikit/.git*
           git checkout main DrawIo
           git checkout main Images
-          git checkout main Miro
           git checkout main index.html
           git status
           # git cherry-pick main, alternatives
