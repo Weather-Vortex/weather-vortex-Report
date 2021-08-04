@@ -132,8 +132,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./WeatherVorex-Report.pdf
-          asset_name: WeatherVorex-Report.pdf
+          asset_path: ./WeatherVortex-Report.pdf
+          asset_name: WeatherVortex-Report.pdf
           asset_content_type: Release pdf
 
 
