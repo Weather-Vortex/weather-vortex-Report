@@ -168,10 +168,10 @@ jobs:
     steps:
       - name: Clone git repo
         uses: actions/checkout@v2
-      - name: Setup git repo 
+      - name: Setup git repo and download all tags
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          git config user.name igor-lirussi
+          git config user.email igor.lirussi@studio.unibo.it
           git fetch --all
       - name: Clone Pandoc dependency 
         run: |
