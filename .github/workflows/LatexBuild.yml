@@ -200,5 +200,5 @@ jobs:
           git status
           # git cherry-pick main, alternatives
           git add .
-          git commit -m 'Updated gh-pages'
+          git commit -m 'Updated gh-pages' || true
           git push
