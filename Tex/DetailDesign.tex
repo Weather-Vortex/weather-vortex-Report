@@ -1,2 +1,33 @@
 % -*- root: ../main.tex -*-
 \chapter{Design di Dettaglio}
+\section{Target Users}
+\section{Scenario d'uso}
+\section{Frontend}
+\subsection{A ogni sottosezione descrivere una pagina}
+\section{Backend}
+\subsection{Risorse}
+Il backend è stato strutturato secondo le seguenti risorse:
+\begin{itemize}
+\item auth - risorsa per registrare, autenticare gli utenti, cancellarli, recuperarne le
+informazioni o aggiornarle.
+\item feedback - risorsa per gestire le recensioni degli utenti sui vari provider meteo.
+\item location - risorsa per cercare di recuperare informazioni di localizzazione di una determinata città
+\item station - risorsa per gestire le varie stazioni meteo
+
+\item openweathermap - risorsa per gestire le richieste dall'api openweathermap e recuperare le previsioni meteo desiderate
+\item troposphere - risorsa per gestire le richieste dall'api troposphere e recuperare le previsioni meteo desiderate
+\item users - risorsa per recuperare i feedbacks e le stazioni di un determinato utente.
+\item weatherProvider - risorsa per recuperare il meteo dalle stazioni
+\end{itemize}
+\subsection{Autenticazione}
+E stato deciso di utilizzare il sistema di autenticazione a token JWT, firmati `
+dal backend.
+Nel token è inserito l'id dell'utente, quindi tutte le operazioni che lo
+richiedono lo recuperano da esso.
+Quando un utente esegue il login correttamente, il backend invia al frontend
+il token da usare e quest’ultimo lo inserisce nel header x-access-token di tutte
+le richieste che lo richiedono.
+Questo flusso è facilmente integrabile nel flusso delle richieste e delle comunicazioni tra il backend e il frontend.
+
+\section{Prodotto finale}
+TODO: Screen di esempio dell'applicazione

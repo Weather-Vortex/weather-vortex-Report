@@ -3,3 +3,19 @@
 % Esporre lo stato di funzionamento effettivo del sistema progettato ad elaborato concluso. Per ciascuna delle funzionalità salienti devono essere tabellate e discusse le performance riscontrate mediante opportuni test eseguiti in fase di validazione del progetto. I tempi di esecuzione/comunicazione devono essere accompagnati dalle caratteristiche dell'hardware sul quale è eseguito il software. Qualora l'elaborato includa algoritmi innovativi, indicarne la complessità computazionale (avendo cura di esporre lo pseudo codice nella sezione Implementazione).
 
 \chapter{Testing e Performance}
+
+Lo sviluppo delle applicazioni web a livello professionale richiede la qualità e la robustezza del codice che è stato prodotto. Per avere delle metriche concrete sulla qualità
+del prodotto, è necessario coprire il progetto di test, sia automatici che manuali
+
+\section{Unit Test}
+Le parti più importanti della logica di business sono stati testati con gli unit test per migliorarne la robustezza e l'affidabilità
+ \subsection{Backend}
+ Il backend utilizza lo testing stack Mocha + Chai + Sinon. 
+Mocha è il framework testing ricco e semplice che consente di creare facilmente
+gli unit test eloquenti.
+Chai è una libreria di assertions BDD/TDD che consente di creare le asserzioni
+multi-paradigma per i test. Tali asserzioni rendono i tests più leggibili e forniscono messaggi di errore migliori in caso di errori. 
+Sinon è la libreria per creare e gestire i test spies, stubs e mocks da utilizzare
+negli unit test. Nel nostro caso è stato utilizzato soltanto per simulare l'invio delle email.
+
+Durante lo sviluppo del backend è stata adoperata una collection Postman per testare tutte le varie chiamate al server. 

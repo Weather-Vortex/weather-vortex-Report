@@ -3,3 +3,9 @@
 % In questa sezione va discussa, eventualmente con l'ausilio di opportuni diagrammi (componenti, deployment), l'evoluzione del progetto presentato immaginando che venga adottato su larga scala. I dettagli qui esposti devono quindi astrarre dalle specifiche dell'elaborato qualora l'implementazione sia stata focalizzata su uno scenario isolato. A titolo d'esempio, qualora applicabile, devono essere evidenziate le criticità che si potrebbero incontrare e devono essere proposte soluzioni tipiche in contesti di cloud architecture per garantire un'adeguata resilienza, in termini di availability e scalability del sistema.
 
 \chapter{Analisi di Deployment}
+\section{Avvio dell'applicazione}
+Per dispiegare tutti i componenti utili per l’applicazione è stato impiegato il
+gestore di container Docker e la sua estensione Docker-compose.
+Per ciascun componente è stato creato il file di istruzioni per creare l’immagine
+e utilizzando docker-compose è stato possibile avviare tutti i container utilizzando un solo comando.
+Basterà infatti un unico comando per avviare l'intera applicazione : \textbf{[sudo] docker-compose up}
