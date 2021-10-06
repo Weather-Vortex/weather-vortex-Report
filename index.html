@@ -106,15 +106,38 @@
                                                         <li><a href="#foopublish-subscribe"><span class="toc-section-number">5.3.2</span> Publish-Subscribe</a></li>
                                                         </ul></li>
                                                         </ul></li>
-                                                        <li><a href="#foodesign-di-dettaglio"><span class="toc-section-number">6</span> Design di Dettaglio</a></li>
+                                                        <li><a href="#foodesign-di-dettaglio"><span class="toc-section-number">6</span> Design di Dettaglio</a>
+                                                        <ul>
+                                                        <li><a href="#footarget-users"><span class="toc-section-number">6.1</span> Target Users</a></li>
+                                                        <li><a href="#fooscenario-duso"><span class="toc-section-number">6.2</span> Scenario d&#x2019;uso</a></li>
+                                                        <li><a href="#foofrontend"><span class="toc-section-number">6.3</span> Frontend</a>
+                                                        <ul>
+                                                        <li><a href="#fooa-ogni-sottosezione-descrivere-una-pagina"><span class="toc-section-number">6.3.1</span> A ogni sottosezione descrivere una pagina</a></li>
+                                                        </ul></li>
+                                                        <li><a href="#foobackend"><span class="toc-section-number">6.4</span> Backend</a>
+                                                        <ul>
+                                                        <li><a href="#foorisorse"><span class="toc-section-number">6.4.1</span> Risorse</a></li>
+                                                        <li><a href="#fooautenticazione"><span class="toc-section-number">6.4.2</span> Autenticazione</a></li>
+                                                        </ul></li>
+                                                        <li><a href="#fooprodotto-finale"><span class="toc-section-number">6.5</span> Prodotto finale</a></li>
+                                                        </ul></li>
                                                         <li><a href="#fooimplementazione"><span class="toc-section-number">7</span> Implementazione</a>
                                                         <ul>
                                                         <li><a href="#fooserver"><span class="toc-section-number">7.1</span> Server</a></li>
                                                         <li><a href="#fooclient"><span class="toc-section-number">7.2</span> Client</a></li>
                                                         <li><a href="#foocentralina"><span class="toc-section-number">7.3</span> Centralina</a></li>
                                                         </ul></li>
-                                                        <li><a href="#footesting-e-performance"><span class="toc-section-number">8</span> Testing e Performance</a></li>
-                                                        <li><a href="#fooanalisi-di-deployment"><span class="toc-section-number">9</span> Analisi di Deployment</a></li>
+                                                        <li><a href="#footesting-e-performance"><span class="toc-section-number">8</span> Testing e Performance</a>
+                                                        <ul>
+                                                        <li><a href="#foounit-test"><span class="toc-section-number">8.1</span> Unit Test</a>
+                                                        <ul>
+                                                        <li><a href="#foobackend-1"><span class="toc-section-number">8.1.1</span> Backend</a></li>
+                                                        </ul></li>
+                                                        </ul></li>
+                                                        <li><a href="#fooanalisi-di-deployment"><span class="toc-section-number">9</span> Analisi di Deployment</a>
+                                                        <ul>
+                                                        <li><a href="#fooavvio-dellapplicazione"><span class="toc-section-number">9.1</span> Avvio dell&#x2019;applicazione</a></li>
+                                                        </ul></li>
                                                         <li><a href="#foopiano-di-lavoro"><span class="toc-section-number">10</span> Piano di lavoro</a></li>
                                                         <li><a href="#foosprints"><span class="toc-section-number">11</span> Sprints</a>
                                                         <ul>
@@ -187,9 +210,9 @@
 <section id="foogestione-di-progetto" class="level2" data-number="3.2">
 <h2 data-number="3.2"><span class="header-section-number">3.2</span> Gestione di Progetto</h2>
 <p>In questa sezione viene dettagliatamente spiegato come il progetto &#xE8; stato organizzato. Gli strumenti e tecnologie con cui &#xE8; scelto di procedere verranno elencati assieme alla descrizione della metodologia.</p>
-<section id="foogant-chart" class="level5" data-number="3.2.0.0.1">
-<h5 data-number="3.2.0.0.1"><span class="header-section-number">3.2.0.0.1</span> Gant Chart</h5>
-<p>Da inizio progetto abbiamo stilato un diagramma di Gant, uno strumento utile per la pianificazione dei progetti. Attraverso una panoramica dei compiti programmati, ci ha permesso di venire a conoscenza dei compiti e delle rispettive scadenze.</p>
+<section id="foogantt-chart" class="level5" data-number="3.2.0.0.1">
+<h5 data-number="3.2.0.0.1"><span class="header-section-number">3.2.0.0.1</span> Gantt Chart</h5>
+<p>A partire da inizio progetto abbiamo stilato un diagramma di Gantt, uno strumento utile per la pianificazione dei progetti. Attraverso una panoramica dei compiti programmati, ci ha permesso di venire a conoscenza dei compiti e delle rispettive scadenze.</p>
 </section>
 <section id="foolicensing" class="level5" data-number="3.2.0.0.2">
 <h5 data-number="3.2.0.0.2"><span class="header-section-number">3.2.0.0.2</span> Licensing</h5>
@@ -197,6 +220,7 @@
 </section>
 <section id="fooversioning" class="level5" data-number="3.2.0.0.3">
 <h5 data-number="3.2.0.0.3"><span class="header-section-number">3.2.0.0.3</span> Versioning</h5>
+<p>Per il versioning ci siamo avvalsi di Github.</p>
 </section>
 <section id="foogithub-projects-management" class="level5" data-number="3.2.0.0.4">
 <h5 data-number="3.2.0.0.4"><span class="header-section-number">3.2.0.0.4</span> GitHub Projects Management</h5>
@@ -333,6 +357,43 @@
 </section>
 <section id="foodesign-di-dettaglio" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Design di Dettaglio</h1>
+<section id="footarget-users" class="level2" data-number="6.1">
+<h2 data-number="6.1"><span class="header-section-number">6.1</span> Target Users</h2>
+</section>
+<section id="fooscenario-duso" class="level2" data-number="6.2">
+<h2 data-number="6.2"><span class="header-section-number">6.2</span> Scenario d&#x2019;uso</h2>
+</section>
+<section id="foofrontend" class="level2" data-number="6.3">
+<h2 data-number="6.3"><span class="header-section-number">6.3</span> Frontend</h2>
+<section id="fooa-ogni-sottosezione-descrivere-una-pagina" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1"><span class="header-section-number">6.3.1</span> A ogni sottosezione descrivere una pagina</h3>
+</section>
+</section>
+<section id="foobackend" class="level2" data-number="6.4">
+<h2 data-number="6.4"><span class="header-section-number">6.4</span> Backend</h2>
+<section id="foorisorse" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1"><span class="header-section-number">6.4.1</span> Risorse</h3>
+<p>Il backend &#xE8; stato strutturato secondo le seguenti risorse:</p>
+<ul>
+<li><p>auth - risorsa per registrare, autenticare gli utenti, cancellarli, recuperarne le informazioni o aggiornarle.</p></li>
+<li><p>feedback - risorsa per gestire le recensioni degli utenti sui vari provider meteo.</p></li>
+<li><p>location - risorsa per cercare di recuperare informazioni di localizzazione di una determinata citt&#xE0;</p></li>
+<li><p>station - risorsa per gestire le varie stazioni meteo</p></li>
+<li><p>openweathermap - risorsa per gestire le richieste dall&#x2019;api openweathermap e recuperare le previsioni meteo desiderate</p></li>
+<li><p>troposphere - risorsa per gestire le richieste dall&#x2019;api troposphere e recuperare le previsioni meteo desiderate</p></li>
+<li><p>users - risorsa per recuperare i feedbacks e le stazioni di un determinato utente.</p></li>
+<li><p>weatherProvider - risorsa per recuperare il meteo dalle stazioni</p></li>
+</ul>
+</section>
+<section id="fooautenticazione" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2"><span class="header-section-number">6.4.2</span> Autenticazione</h3>
+<p>E stato deciso di utilizzare il sistema di autenticazione a token JWT, firmati &#x2018; dal backend. Nel token &#xE8; inserito l&#x2019;id dell&#x2019;utente, quindi tutte le operazioni che lo richiedono lo recuperano da esso. Quando un utente esegue il login correttamente, il backend invia al frontend il token da usare e quest&#x2019;ultimo lo inserisce nel header x-access-token di tutte le richieste che lo richiedono. Questo flusso &#xE8; facilmente integrabile nel flusso delle richieste e delle comunicazioni tra il backend e il frontend.</p>
+</section>
+</section>
+<section id="fooprodotto-finale" class="level2" data-number="6.5">
+<h2 data-number="6.5"><span class="header-section-number">6.5</span> Prodotto finale</h2>
+<p>TODO: Screen di esempio dell&#x2019;applicazione</p>
+</section>
 </section>
 <section id="fooimplementazione" class="level1" data-number="7">
 <h1 data-number="7"><span class="header-section-number">7</span> Implementazione</h1>
@@ -351,9 +412,23 @@
 </section>
 <section id="footesting-e-performance" class="level1" data-number="8">
 <h1 data-number="8"><span class="header-section-number">8</span> Testing e Performance</h1>
+<p>Lo sviluppo delle applicazioni web a livello professionale richiede la qualit&#xE0; e la robustezza del codice che &#xE8; stato prodotto. Per avere delle metriche concrete sulla qualit&#xE0; del prodotto, &#xE8; necessario coprire il progetto di test, sia automatici che manuali</p>
+<section id="foounit-test" class="level2" data-number="8.1">
+<h2 data-number="8.1"><span class="header-section-number">8.1</span> Unit Test</h2>
+<p>Le parti pi&#xF9; importanti della logica di business sono stati testati con gli unit test per migliorarne la robustezza e l&#x2019;affidabilit&#xE0;</p>
+<section id="foobackend-1" class="level3" data-number="8.1.1">
+<h3 data-number="8.1.1"><span class="header-section-number">8.1.1</span> Backend</h3>
+<p>Il backend utilizza lo testing stack Mocha + Chai + Sinon. Mocha &#xE8; il framework testing ricco e semplice che consente di creare facilmente gli unit test eloquenti. Chai &#xE8; una libreria di assertions BDD/TDD che consente di creare le asserzioni multi-paradigma per i test. Tali asserzioni rendono i tests pi&#xF9; leggibili e forniscono messaggi di errore migliori in caso di errori. Sinon &#xE8; la libreria per creare e gestire i test spies, stubs e mocks da utilizzare negli unit test. Nel nostro caso &#xE8; stato utilizzato soltanto per simulare l&#x2019;invio delle email.</p>
+<p>Durante lo sviluppo del backend &#xE8; stata adoperata una collection Postman per testare tutte le varie chiamate al server.</p>
+</section>
+</section>
 </section>
 <section id="fooanalisi-di-deployment" class="level1" data-number="9">
 <h1 data-number="9"><span class="header-section-number">9</span> Analisi di Deployment</h1>
+<section id="fooavvio-dellapplicazione" class="level2" data-number="9.1">
+<h2 data-number="9.1"><span class="header-section-number">9.1</span> Avvio dell&#x2019;applicazione</h2>
+<p>Per dispiegare tutti i componenti utili per l&#x2019;applicazione &#xE8; stato impiegato il gestore di container Docker e la sua estensione Docker-compose. Per ciascun componente &#xE8; stato creato il file di istruzioni per creare l&#x2019;immagine e utilizzando docker-compose &#xE8; stato possibile avviare tutti i container utilizzando un solo comando. Baster&#xE0; infatti un unico comando per avviare l&#x2019;intera applicazione : <strong>[sudo] docker-compose up</strong></p>
+</section>
 </section>
 <section id="foopiano-di-lavoro" class="level1" data-number="10">
 <h1 data-number="10"><span class="header-section-number">10</span> Piano di lavoro</h1>
