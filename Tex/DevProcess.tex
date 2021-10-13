@@ -21,7 +21,7 @@ In questa sezione viene dettagliatamente spiegato come il progetto è stato orga
     A inizio progetto sono stati stilati insieme i primi requisiti di business e funzionali, sono state delineate le prime user stories, ragionando sui problemi che avrebbe dovuto affrontare tale tipologia di lavoro.
    Si è deciso di suddividere il lavoro in Sprint, ognuno con durata teorica di una settimana. Ad ogni Sprint corrispondevano diverse attività, anche chiamate issue. Tale tempistica, come accennato sopra, poi non è sempre stata rispettata. Spesso si sono riscontrati problemi durante lo svolgimento di un task e i tempi si sono allungati.\\
     All'interno del team Daniele Tentoni è stato sicuramente colui che ha svolto il ruolo dello Scrum Master oltre a far parte del gruppo di sviluppo: egli ha guidato il team per facilitare lo sviluppo di software funzionante, assicurando anche la corretta applicazione dei processi scrum.\\
-    Lo Sprint con le varie attività da svolgere veniva stilato solitamente durante gli incontri, e le decisioni venivano prese collegialmente. Il Product Backlog è stato quindi fatto insieme.\\ 
+    Lo Sprint con le varie attività da svolgere veniva stilato solitamente durante gli incontri, e le decisioni su cosa fare venivano prese collegialmente. Il Product Backlog è stato quindi fatto insieme.\\ 
     Si è proceduto in questo modo: si è iniziato a produrre la parte Server e, una volta sviluppate le principali funzionalità di quest'ultimo con i relativi test, si è poi passati a curare la parte client e la parte grafica. Nel frattempo si è anche iniziata a collegare la parte backend con quella frontend. Per ultimo, sono stati fatti anche gli User Acceptance Test.\\
     Ognuno era delegato al testing e agli User Acceptance Test sulla propria parte di codice prodotta,i test sono interni al progetto. 
     
@@ -33,14 +33,11 @@ In questa sezione viene dettagliatamente spiegato come il progetto è stato orga
     \paragraph{Licensing: } Per quanto riguarda la gestione delle licenze, è stato scelta, tra le varie disponibili, la licenza GNU General Public Service. E' una licenza copyleft, ovvero un tipo di licenza che viene applicata ai software open source. Il programma può essere quindi distribuito liberamente, modificato e migliorato.
     
     \paragraph{Versioning: }
-    Per il versioning ci si è avvalsi di Git e come piattaforma web di Github che incorpora le funzionalità di controllo di versione di git.
+    Per il versioning ci si è avvalsi di Git e come piattaforma web di Github che incorpora le funzionalità di controllo di versione di git. 
     
-    \paragraph{Funzionalità di Github usate: }
+    \paragraph{Github Issues and Project Boards: }
     Per organizzare il lavoro, compilare e assegnare i tasks sono state utilizzate le Github Issues dove è possibile pianificare e tenere traccia del proprio operato aggiungendo varie issue al progetto, ognuna corrispondente a un task. Ad ogni issue è possibile aggiungere vari elementi, labels e il nome di chi deve svolgerla.\\ In minor misura sono state usate le GitHub Projects boards. Esse aiutano a organizzare e prioritarizzare il lavoro. Si tratta di schede che contengono issues e note che vengono categorizzate in cards su colonne, ogni colonna indica lo stadio di avanzamento del compito.\\
-    Per lo sviluppo di ogni issue veniva creato un branch apposito. Al completamento veniva fatta una pull request, dove veniva richiesta la review da parte di tutti gli altri componenti del team per poter includere le proprie modifiche al progetto. Tali modifiche sarebbero poi state inserite sul branch di sviluppo dev. 
-    
-    
-    
+   
     \paragraph{Telegram: }
     E' stato creato un gruppo Telegram per aggiornarsi giornalmente sullo sviluppo del progetto, esprimere eventuali dubbi e avere ulteriori chiarimenti. 
     
@@ -51,12 +48,18 @@ In questa sezione viene dettagliatamente spiegato come il progetto è stato orga
 
 \section{Continuous Integration e Automatizzazione}
 \label{chap:CI}
-In questo capitolo si analizza la parte di integrazione e automatizzazione sia del progetto software che della relazione. 
+In questo capitolo si analizza la parte di integrazione e automatizzazione sia del progetto software che della relazione.\\  Si è pensato di organizzare l'automazione dei compiti più ripetitivi attraverso l'approccio CI/CD, sia per il progetto che per la stesura della relazione.
     \subsection{Relazione di Progetto}
-        descrizione CI della relazione da Overleaf a GitHub action e la release
-
+        La relazione è stata scritta su Overleaf, uno strumento di scrittura e pubblicazione collaborativo online.
+        Inoltre il progetto Overleaf è stato sincronizzato su un apposito repository in Github, dove poter inserire le modifiche ogni volta. Il branch main ospita la release finale della relazione. 
+        
     \subsection{Progetto}
-        CI implementata per il testing 
+   
+        Il branch master è il centro del nostro progetto, perché rispecchia la versione pubblica attualmente in produzione, la versione cioè accessibile ai nostri utenti. L’approccio GitFlow, che abbiamo seguito fedelmente, infatti utilizza due rami principali per gestire il controllo di versione del progetto. Il primo, master che conserva, come detto, tutte le release. Il secondo è il ramo dev, che è fondamentale per lo sviluppo delle prossime versioni e serve come base per le future integrazioni. Master e Dev rappresentano l'ossatura del repository. Essi sono il punto di partenza e di arrivo di tutti gli altri branch.\\
+    Per lo sviluppo di ogni issue veniva creato un branch apposito. Al completamento il codice veniva compilato e testato, infine veniva fatta una pull request, dove veniva richiesta la review da parte di tutti gli altri componenti del team per poter includere le proprie modifiche al progetto. Tali modifiche sarebbero poi state inserite sul branch di sviluppo dev. \\
+    Periodicamente quindi veniva fatta una release sul branch main. Il codice sul branch dev veniva ritestato e anche i membri del team eseguivano gli opportuni User Acceptance test per verificare le varie funzionalità implementate. 
+    Il deploy finale del progetto per la produzione è stato fatto attraverso le Github Pages.
+   
         
         
 
