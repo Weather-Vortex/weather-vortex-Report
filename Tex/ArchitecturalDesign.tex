@@ -7,6 +7,40 @@
     \section{Architettura Generale}
     L'architettura generale del sistema è ...
     
+    Abbiamo deciso di utilizzare dividere il nostro sistema in due macro componenti: un applicativo server, che si occupi di gestire le richieste degli utenti, e un applicativo client, che si occupi di interrogare il server per richiedere informazioni. Le specifiche imposte dalla prova di esame in corso imponevano di usare determinate tecnologie per lo sviluppo di tali componenti ma non imponevano altri vincoli. Abbiamo scelto noi di sviluppare i due componenti come progetti separati per aumentare l'indipendenza di un componente rispetto l'altro.
+    
+    \par Le funzioni che saranno da qui demandate all'applicativo Server saranno:
+    
+    \begin{itemize}
+    
+        \item Richiesta di previsioni meteo da providers esterni: data la lista di providers a cui ci siamo registrati o abbonati a piani a pagamento, quando il nostro server viene interrogato per una previsione meteo ne effettuerà tante quante sono le risorse esterne in questione e non appena i risultati saranno ricevuti, devono essere immediatamente processati e forniti in input se le modalità lo consentono, altrimenti una volta che saranno tutti pronti potranno essere spediti indietro tutti assieme. Le unità di misura dovranno essere tutte uniformi e convertite all'occorrenza.
+        
+        \par I providers meteo esterni possono anche essere le centraline degli utenti a patto che esse siano in una zona vicina a quella della richiesta della previsione.
+        
+        \item Richiesta di autenticazione da parte dei client: date le credenziali degli utenti, il server si deve occupare di verificarne la presenza nella base dati degli utenti registrati il sito e fornire il risultato di questa indagine. Dopo averne verificato l'autenticità e la validità, deve essere rilasciato un token di autenticazione da utilizzare nel caso in cui bisognasse richiedere delle risorse protette dei singoli utenti per verificarne la proprietà
+        
+        \item Richiesta di feedbacks dei providers meteo: fornire un sistema di recensioni che è possibile lasciare per ogni provider in base alla corretezza della loro previsioni meteo rilasciare, per poi poterle anche richiedere l'elenco di tutte quelle rilasciate per i providers e una valutazione media dell'affidabilità di un determinato servizio.
+        
+        \item Notifica di previsioni meteo a caselle di posta elettronica: configurando un account di posta elettronica per il proprio utente, il server deve poter inviare delle emails a chi ne fa richiesta per poter conoscere all'inizio della propria giornata o nel momento che si ritiene più opportuno le previsioni per la località preferita.
+        
+    \end{itemize}
+    
+    \par Le funzioni che saranno da qui demandate all'applicativo Client saranno:
+    
+    \begin{itemize}
+    
+        \item Presentazione del progetto, degli autori e delle funzionalità messe a disposizione.
+        
+        \item Fornitura di un'interfaccia utente semplificata per la richiesta delle previsioni meteo all'applicativo Server che renda comodo ed intuitivo la consultazione e la fruizione delle previsioni meteo dei vari providers, con calcolo automatico di statistiche relative alla distribuzione, alle differenze e similitudini dei risultati ottenuti mano a mano che sono pronti ed opportunamente processati ed inviati dal Server.
+        
+        \item Gestione delle impostazioni e dei dati personali degli utenti: registrandosi al sito, ogni utente fornisce un insieme di dati e informazioni che devono essere mantenute, consultabili e modificabili agilmente dall'utente. Le informazioni gestite comprendono anche la località preferita dell'utente, le centraline registrate e i feedbacks rilasciati.
+        
+        \item Gestione dei feedbacks rilasciati dagli utenti: deve rendere possibile creare delle recensioni per i providers e renderle consultabili da tutti gli utenti, assieme ad una valutazione complessiva del servizio stesso.
+    
+    \end{itemize}
+    
+    \par Oltre a questi componenti deve essere sviluppato anche il componente per simulare una centralina meteo amatoriale che possa ricevere le richieste del server per ottenere le previsioni meteo della zona in cui è situata. Per fare questo, abbiamo creato un nuovo progetto indipendente che assolva a questi compiti.
+    
     \section{Scelte Tecnologiche Cruciali}
     Di seguito alcune scelte tecnologiche cruciali
 
@@ -14,7 +48,3 @@
         \subsection{Client-Server}
         pattern client-server 
     
-        \subsection{Publish-Subscribe}
-        pattern publish-subscribe
-        
-        

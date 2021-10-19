@@ -4,21 +4,23 @@
 
 \chapter{Stato dell'Arte}
 Il topic scelto in letteratura ha ricevuto molte attenzioni per via della stessa natura delle previsioni meteo, fortemente legate al machine learning. Tuttavia per quanto riguarda l'aggregazione di esse non risultano presenti particolari ricerche.
-\par Dalle informazioni che abbiamo raccolto su studi e applicazione di \textbf{idee similari} alla nostra è emerso quanto segue:
+\par Dalle informazioni che abbiamo raccolto su studi e applicazioni di idee similari alla nostra è emerso quanto segue:
 
 \begin{itemize}
 
-    \item \textbf{Aggregazione}: sono presenti alcuni siti similari ma offrono funzionalità molto limitate, è possibile vedere solo le previsioni odierne o è impossibile avere un account che permetta di scegliere quanta fiducia dare a diversi servizi.
+    \item \textbf{Aggregazione}: sono presenti alcuni siti similari ma offrono funzionalità molto limitate, è possibile vedere solo le previsioni odierne e non permettono di scegliere quanta fiducia dare ai diversi servizi.
     
     \begin{itemize}
     
-        \item Il servizio https://www.metaweather.com/it/ fornisce un servizio di aggregazione di dati simile a quello che vogliamo ottenere con il nostro progetto, ma la visualizzazione delle recensioni dei servizi meteo non è pubblica e non viene data la possibilità di aggiungere centraline meteo.
+        \item Il servizio \href{https://www.metaweather.com/it/}{Metaweather} fornisce un'aggregazione di dati simile a quella che vogliamo ottenere con il nostro progetto, ma la visualizzazione delle recensioni dei servizi meteo non è pubblica e non viene data la possibilità di aggiungere centraline meteo.
         
-        \item Google sta progettando con successo una Deep Neural Network per predire più efficacemente le condizioni meteo combinando esclusivamente i dati delle previsioni meteo passate negli ultimi anni. Applicando poi questi algoritmi alle previsioni delle ultime ore o giorni, senza alcuna conoscenza dei modelli fisici adottati fino adesso per la previsione delle condizioni meteo, è in grado di determinare talvolta con estrema accuratezza le condizioni future fino a 8 ore: https://neurohive.io/en/news/google-s-deep-neural-network-makes-detailed-weather-forecasts/
+        \item Google sta progettando con successo una Deep Neural Network per predire più efficacemente le condizioni meteo combinando esclusivamente i dati delle previsioni meteo negli anni passati. Applicando poi questi algoritmi alle previsioni delle ultime ore o giorni, senza alcuna conoscenza dei modelli fisici adottati fino adesso per la previsione delle condizioni meteo, è in grado di determinare talvolta con estrema accuratezza le condizioni future fino a 8 ore: \href{https://neurohive.io/en/news/google-s-deep-neural-network-makes-detailed-weather-forecasts/}{Google's Deep Neural Network}. 
         
     \end{itemize}
     
-    \item \textbf{Personalizzazione}: non sono presenti siti, se non prototipali, che permettano di registrare una centralina personale da aggiungere alle fonti per le previsioni. In genere gli appassionati adottano delle soluzioni pensate appositamente per le proprie centraline che non comunichino con altre centraline di altri appassionati oppure con servizi meteo esistenti. Talvolta potrebbero esserci progetti che raccolgano dati da centraline multiple, ma ciò è mirato a produrre un unica previsione meteo incrociando i dati dalle fonti facendo perdere il concetto di centralina e previsione per la singola entità, in favore della previsione meteo per una determinata zona come sistema di centraline.
+    \item \textbf{Personalizzazione}: non sono presenti siti, se non prototipali, che permettano di registrare una centralina personale da aggiungere alle fonti per le previsioni. 
+    
+    \par In genere gli appassionati adottano delle soluzioni pensate appositamente per le proprie centraline, che non comunicano con altri dispositivi di altri appassionati oppure con servizi meteo esistenti. Talvolta potrebbero esserci progetti che raccolgono dati da diverse centraline, ma ciò è mirato a produrre un'unica previsione meteo incrociando i dati dalle fonti. Viene perso il riferimento ad ogni centralina e i suoi dati, producendo una previsione meteo unica per tutta la zona.
     
 \end{itemize}
  
