@@ -4,11 +4,26 @@
 
 \chapter{Testing e Performance}
 
-Lo sviluppo delle applicazioni web a livello professionale richiede la qualità e la robustezza del codice che è stato prodotto. Per avere delle metriche concrete sulla qualità
-del prodotto, è necessario coprire il progetto di test, sia automatici che manuali
+Lo sviluppo delle applicazioni web a livello professionale richiede la qualità e la robustezza del codice che è stato prodotto. Per avere delle metriche concrete sulla qualità del prodotto, è necessario coprire il progetto di test, sia automatici che manuali.
 
 \section{Unit Test}
-Le parti più importanti della logica di business sono stati testati con gli unit test per migliorarne la robustezza e l'affidabilità
+
+Le parti più importanti della logica di business sono stati testati con gli unit test per migliorarne la robustezza e l'affidabilità. Molte componenti dell'applicativo Server sono state sviluppate con un approccio Test Driven Development e sono state controllate molte volte prima di essere messe in produzione.
+
+\par In generale si è cercato di tenere un approccio sistematico per affrontare i problemi:
+
+\begin{itemize}
+
+    \item Si cercava di modellare in modo il più reale possibile le entità che si sarebbero manipolate successivamente, cercando di capire il dominio del problema e quali fossero tutti i dati di cui avesse bisogno
+    
+    \item Successivamente si sviluppava il componente che sarebbe stato delegato a interagire principalmente con la base dati di entità appena modellate creando prima i test automatici per controllare che i dati venissero manipolati correttamente a seconda delle necessità
+    
+    \item In tal modo si sviluppavano anche i componenti della logica di business che dovevano gestire il susseguirsi delle operazioni sui dati in modo da completare i compiti da svolgere e i componenti che dovevano gestire le richieste dei client e fornire loro i dati richiesti.
+    
+    \item Infine, al manifestarsi di ulteriori problemi e malfunzionamenti, si cercava sempre prima di trovare se ci fossero stati dei problemi nell'implementazione dei test e che le loro funzionalità fossero quelle che ci si aspettava. In tal caso, allora si procedeva alla stesura di altri test automatici che permettessero di riprodurre il problema e risolverlo.
+    
+\end{itemize}
+
  \subsection{Backend}
  Il backend utilizza lo testing stack Mocha + Chai + Sinon. 
 Mocha è il framework testing ricco e semplice che consente di creare facilmente
