@@ -5,9 +5,8 @@
 \chapter{Design Architetturale}
      fase di Design Architetturale.
     \section{Architettura Generale}
-    L'architettura generale del sistema è ...
     
-    Abbiamo deciso di utilizzare dividere il nostro sistema in due macro componenti: un applicativo server, che si occupi di gestire le richieste degli utenti, e un applicativo client, che si occupi di interrogare il server per richiedere informazioni. Le specifiche imposte dalla prova di esame in corso imponevano di usare determinate tecnologie per lo sviluppo di tali componenti ma non imponevano altri vincoli. Abbiamo scelto noi di sviluppare i due componenti come progetti separati per aumentare l'indipendenza di un componente rispetto l'altro.
+    Abbiamo deciso di dividere il nostro sistema in due macro componenti: un applicativo server, che si occupi di gestire le richieste degli utenti, e un applicativo client, che si occupi di interrogare il server per richiedere informazioni. Le specifiche imposte dalla prova di esame in corso imponevano di usare determinate tecnologie per lo sviluppo di tali componenti ma non imponevano altri vincoli. Abbiamo scelto noi di sviluppare i due componenti come progetti separati per aumentare l'indipendenza di un componente rispetto l'altro.
     
     \par Le funzioni che saranno da qui demandate all'applicativo Server saranno:
     
@@ -41,10 +40,14 @@
     
     \par Oltre a questi componenti deve essere sviluppato anche il componente per simulare una centralina meteo amatoriale che possa ricevere le richieste del server per ottenere le previsioni meteo della zona in cui è situata. Per fare questo, abbiamo creato un nuovo progetto indipendente che assolva a questi compiti.
     
+    \par Nel seguente schema vengono anche mostrati altri due componenti, chiamati Providers, che rappresentano i servizi esterni a cui ci affidiamo per ottenere dei dati meteo veritieri.
+    
+    METTERE IL NUOVO SCHEMA
+    
     \section{Scelte Tecnologiche Cruciali}
     Di seguito alcune scelte tecnologiche cruciali
 
     \section{Pattern Architetturali Utilizzati}
         \subsection{Client-Server}
-        pattern client-server 
+        Descrivere come il Client esegue le richieste al Server, come il Server esegua le richieste agli n providers, come essi rispondono al Server e come infine il Server risponde al Client.
     
