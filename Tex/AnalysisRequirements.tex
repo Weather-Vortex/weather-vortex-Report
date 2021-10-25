@@ -48,20 +48,20 @@ In questa fase sono stati individuati i \textbf{requisiti del sistema}, partendo
             
 	    
 	\section{Requisiti Funzionali} %obbligatori, desiderabili e opzionali
-	Di seguito si riportano i requisiti funzionali, descrivendo in modo più dettagliato le funzionalità che deve avere l'applicazione:
+	Di seguito si riportano i requisiti funzionali, descrivendo in modo più dettagliato possibile le funzionalità che deve avere l'applicazione:
 	 \begin{itemize}
 	 \item L'applicativo dovrà fornire la possibilità di aggiungere una previsione inserendo una località specifica o tramite coordinate geografiche.
 	\item L'applicativo dovrà \textbf{ridurre il tempo necessario} per consultare più previsioni.
-	\item L'applicazione dovrà fornire i seguenti dettagli delle previsioni: condizione meteo, temperatura, pressione, velocità del vento e direzione, quantità di pioggia e umidità.
-	\item Il sistema dovrà produrre le previsioni aggregate come media di tutte le previsioni dei vari provider internazionali.
+	\item L'applicazione dovrà fornire i seguenti dettagli delle previsioni: condizione meteo, temperatura, pressione, quantità di pioggia e umidità.
+	\item Il sistema dovrà produrre le previsioni aggregate come media di tutte le previsioni dei vari provider.
 	\item Il sistema deve offrire previsioni correnti e fino a tre giorni.
 	\item L'applicativo dovrà fornire per ogni provider meteo un indice di affidabilità, dato dalla media dei ratings dei suoi feedbacks.
-	\item L'applicativo dovrà fornire maggiori funzionalità per un utente registrato quali poter aggiungere, aggiornare oppure rimuovere le centraline,la località preferità e eventuali feedbacks sui provider.
-	\item Il sistema fornirà un sistema di notifiche che invii ad una certa ora le previsioni giornaliere sulla località preferita dell'utente via email.
+	\item L'applicativo dovrà fornire maggiori funzionalità per un utente registrato quali poter aggiungere, aggiornare oppure rimuovere le centraline, la località preferita e eventuali feedbacks sui provider.
+	\item Il sistema fornirà un meccanismo di notifiche che invii ad una certa ora le previsioni giornaliere sulla località preferita dell'utente via email.
 	\item L'applicativo dovrà salvarsi in memoria le ultime previsioni in modo da risparmiare tempo su richieste successive della stessa zona. 
-	\item L'applicativo dovrà mostrare degli alert in caso di errori (ad esempio: quando le previsioni non sono state caricate correttamente, c'è stato un errore durante la registrazione o il login, oppure durante l'aggiunta, o la cancellazione di una centralina o di un feedback, etc).
-	\item L'applicativo dovrà mostrare anche degli alert qualora le operazioni siano avvenute con successo per facilitare l'esperienza utente (Ad esempio: la registrazione o il login sono avvenuti con successo, la centralina o il feedback sono stati aggiunti correttamente etc.).
-	\item Il prodotto dovrà fornire un'interfaccia responsive e usabile.
+	\item L'applicativo dovrà mostrare degli alert in caso di errori (ad esempio: qualora le previsioni non siano state caricate correttamente oppure ci sia stato un errore durante la registrazione o il login, etc...).
+	\item L'applicativo dovrà mostrare anche degli alert qualora le operazioni siano avvenute con successo per facilitare l'esperienza utente (Ad esempio: la registrazione o il login sono avvenuti con successo, la centralina o il feedback sono stati aggiunti correttamente, etc...).
+
 	\end{itemize}
         \subsection{Applicativo web}
         L'applicativo web deve consentire ad ogni utente di accedere con una serie di credenziali, e dividere le operazioni consentite in base ai permessi concessi.
@@ -91,6 +91,7 @@ In questa fase sono stati individuati i \textbf{requisiti del sistema}, partendo
                 \item \textbf{Scalabilità}: L'applicativo dovrà necessariamente consentire di aumentare o diminuire il numero di utenti gestiti senza particolari problemi. 
                 \item \textbf{Disponibilità}:L'applicazione dovrà essere disponibile 24/7. L'utilizzo di più api per il meteo , oltre allo scopo di fornire l'aggregazione delle previsioni, ha anche quello di mantenere le previsioni disponibili anche se qualche provider è momentaneamente down.
                 \item L'applicazione dovrà lavorare senza errori, essere veloce e fornire una buona "user experience".
+                	\item Il prodotto dovrà fornire un'interfaccia responsive e usabile.
             \end{itemize}
         
 
