@@ -50,48 +50,59 @@ In questa fase sono stati individuati i \textbf{requisiti del sistema}, partendo
 	\section{Requisiti Funzionali} %obbligatori, desiderabili e opzionali
 	Di seguito si riportano i requisiti funzionali, descrivendo in modo più dettagliato possibile le funzionalità che deve avere l'applicazione:
 	 \begin{itemize}
-	 \item L'applicativo dovrà fornire la possibilità di aggiungere una previsione inserendo una località specifica o tramite coordinate geografiche.
-	\item L'applicativo dovrà \textbf{ridurre il tempo necessario} per consultare più previsioni.
-	\item L'applicazione dovrà fornire i seguenti dettagli delle previsioni: condizione meteo, temperatura, pressione, quantità di pioggia e umidità.
-	\item Il sistema dovrà produrre le previsioni aggregate come media di tutte le previsioni dei vari provider.
-	\item Il sistema deve offrire previsioni correnti e fino a tre giorni.
-	\item L'applicativo dovrà fornire per ogni provider meteo un indice di affidabilità, dato dalla media dei ratings dei suoi feedbacks.
-	\item L'applicativo dovrà fornire maggiori funzionalità per un utente registrato quali poter aggiungere, aggiornare oppure rimuovere le centraline, la località preferita e eventuali feedbacks sui provider.
-	\item Il sistema fornirà un meccanismo di notifiche che invii ad una certa ora le previsioni giornaliere sulla località preferita dell'utente via email.
-	\item L'applicativo dovrà salvarsi in memoria le ultime previsioni in modo da risparmiare tempo su richieste successive della stessa zona. 
-	\item L'applicativo dovrà mostrare degli alert in caso di errori (ad esempio: qualora le previsioni non siano state caricate correttamente oppure ci sia stato un errore durante la registrazione o il login, etc...).
-	\item L'applicativo dovrà mostrare anche degli alert qualora le operazioni siano avvenute con successo per facilitare l'esperienza utente (Ad esempio: la registrazione o il login sono avvenuti con successo, la centralina o il feedback sono stati aggiunti correttamente, etc...).
+	 \item fornire la possibilità di aggiungere una previsione inserendo una località specifica o tramite coordinate geografiche.
+	\item ridurre il tempo necessario per consultare più previsioni.
+	\item fornire i seguenti dettagli delle previsioni: condizione meteo, temperatura, pressione, quantità di pioggia e umidità.
+	\item produrre le previsioni aggregate come media di tutte le previsioni dei vari provider.
+	\item offrire previsioni correnti e fino a tre giorni.
+	\item fornire per ogni provider meteo un indice di affidabilità, dato dalla media dei ratings dei suoi feedbacks.
+	\item fornire maggiori funzionalità per un utente registrato quali poter aggiungere, aggiornare oppure rimuovere le centraline, la località preferita e eventuali feedbacks sui provider.
+	\item fornire un meccanismo di notifiche che invii ad una certa ora le previsioni giornaliere sulla località preferita dell'utente via email.
+	\item salvare in memoria le ultime previsioni in modo da risparmiare tempo su richieste successive della stessa zona. 
+	\item mostrare degli alert in caso di errori (ad esempio: qualora le previsioni non siano state caricate correttamente oppure ci sia stato un errore durante la registrazione o il login, etc...).
+	\item mostrare anche degli alert qualora le operazioni siano avvenute con successo per facilitare l'esperienza utente (ad esempio: la registrazione o il login sono avvenuti con successo, la centralina o il feedback sono stati aggiunti correttamente, etc...).
 
 	\end{itemize}
         \subsection{Applicativo web}
         L'applicativo web deve consentire ad ogni utente di accedere con una serie di credenziali, e dividere le operazioni consentite in base ai permessi concessi.
-        Il sito è suddiviso pagine :
+        Il sito è suddiviso in pagine:
         \begin{itemize}
-            \item \textbf{Pagine di autenticazione}
+            \item \textbf{Autenticazione}:
                 Pagina di login per effettuare l'accesso e pagina di registrazione per i nuovi utenti.
-            \item \textbf{home}
-                La pagina principale in cui è possibile registrarsi, accedere, visualizzare le previsioni. E' visibile da chiunque.
-            \item \textbf{Pagina Profilo}: E' il profilo privato dell'utente a cui si può accedere solo se si è registrati. Permette di visualizzare e eventualmente modificare le proprie informazioni, visualizzare o cancellare i propri feedbacks, visualizzare, modificare o cancellare le proprie centraline.
-            \item \textbf{Pagina Profilo Pubblico}: Serve per visualizzare le informazioni di un altro utente. E' visibile da chiunque.
-             \item \textbf{Pagina Forecast}: Pagina dove è possibile visualizzare il meteo corrente e le previsioni dei prossimi tre giorni, sia aggregate che non. E' visibile da chiunque.
-              \item \textbf{Pagina Feedbacks}: Pagina dove è possibile visualizzare i feedbacks dei vari provider e consultare i loro indici di affidabilità. E' visibile da chiunque, ma si possono aggiungere feedbacks solo se registrati. 
-              \item \textbf{Pagina About}: Pagina dove è possibile visualizzare informazioni sugli sviluppatori del progetto e sullo scopo dell'applicativo, con un modulo di contatto agli admin.
+            
+            \item \textbf{Home}:
+                dove è possibile registrarsi, accedere, visualizzare le previsioni. E' visibile da chiunque. Mostra brevemente, con l'aiuto di immagini, le funzionalità del sito.
+                
+            \item \textbf{Profilo Privato}:
+                dove visualizzare e modificare le proprie informazioni o gestire i propri feedbacks e centraline. Solo il proprietario del profilo può accedere a questa pagina.
+            
+            \item \textbf{Profilo Pubblico}:
+                serve per visualizzare le informazioni di un altro utente. E' visibile da chiunque.
+                
+            \item \textbf{Forecast}
+                dove vengono visualizzate le condizioni meteo correnti e le previsioni dei prossimi tre giorni. Queste possono essere sia aggregate che non. E' visibile da chiunque.
               
+            \item \textbf{Feedbacks} 
+                visualizza i feedbacks dei vari provider e i loro indici di affidabilità. E' visibile da chiunque, ma si possono aggiungere feedbacks solo se registrati. 
+              
+            \item \textbf{About} 
+                mostra informazioni sugli sviluppatori del progetto e sullo scopo dell'applicativo, con un modulo di contatto per chiedere informazioni o segnalare problemi agli admin.
             
         \end{itemize}
-        
-    
         
 	\section{Requisiti non Funzionali}	
     Il sistema dovrà rispettare i seguenti requisiti non funzionali per un'alta \textbf{qualità}:
  
             \begin{itemize}
                 \item \textbf{Reattività}: L'applicazione dovrà essere reattiva e fornire un basso tempo di risposta, tutte le azioni dovranno essere processate istantaneamente e le informazioni dovranno essere aggiornate subito.
-                \item \textbf{Modularità}:L'applicazione dovrà essere modulabile, con lo scopo di aggiungere senza problemi eventuali nuove funzionalità.
+                
+                \item \textbf{Modularità}: L'applicazione dovrà essere modulabile, con lo scopo di aggiungere senza problemi eventuali nuove funzionalità.
+                
                 \item \textbf{Scalabilità}: L'applicativo dovrà necessariamente consentire di aumentare o diminuire il numero di utenti gestiti senza particolari problemi. 
-                \item \textbf{Disponibilità}:L'applicazione dovrà essere disponibile 24/7. L'utilizzo di più api per il meteo , oltre allo scopo di fornire l'aggregazione delle previsioni, ha anche quello di mantenere le previsioni disponibili anche se qualche provider è momentaneamente down.
-                \item L'applicazione dovrà lavorare senza errori, essere veloce e fornire una buona "user experience".
-                	\item Il prodotto dovrà fornire un'interfaccia responsive e usabile.
+                
+                \item \textbf{Disponibilità}: L'applicazione dovrà essere disponibile 24/7. L'utilizzo di più api per il meteo , oltre allo scopo di fornire l'aggregazione delle previsioni, ha anche quello di mantenere le previsioni disponibili anche se qualche provider è momentaneamente down.
+                
+                \item L'applicazione dovrà lavorare senza errori e fornire una buona "user experience" tramite un'interfaccia responsive e usabile.
             \end{itemize}
         
 
