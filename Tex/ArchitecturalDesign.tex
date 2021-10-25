@@ -3,46 +3,71 @@
 % Devono essere esposte le scelte progettuali operate nelle varie fasi di sviluppo dell'elaborato. In questa sezione devono essere documentati gli schemi di progetto relativamente all'architettura complessiva del sistema e alle sue componenti di rilievo che possano meritare un'analisi di dettaglio. Per le componenti software si può ricorrere ad esempio a diagrammi delle classi, di sequenza, stato, attività. Per le componenti hardware è possibile includere opportuni schemi in grado di descrivere l'architettura fisica adottata.
 
 \chapter{Design Architetturale}
-     fase di Design Architetturale.
+
     \section{Architettura Generale}
     
-    Abbiamo deciso di dividere il nostro sistema in due macro componenti: un applicativo server, che si occupi di gestire le richieste degli utenti, e un applicativo client, che si occupi di interrogare il server per richiedere informazioni. Le specifiche imposte dalla prova di esame in corso imponevano di usare determinate tecnologie per lo sviluppo di tali componenti ma non imponevano altri vincoli. Abbiamo scelto noi di sviluppare i due componenti come progetti separati per aumentare l'indipendenza di un componente rispetto l'altro.
+    Abbiamo deciso di dividere il nostro sistema in due macro componenti: un applicativo server, che si occupi di gestire le richieste degli utenti, e un applicativo client, che si occupi di interrogare il server per richiedere informazioni. Le specifiche imposte dalla prova di esame in corso imponevano di usare determinate tecnologie per lo sviluppo di tali componenti, ma non imponevano altri vincoli. Abbiamo scelto noi di sviluppare i due componenti come progetti separati per aumentare l'indipendenza di un componente rispetto l'altro.
     
-    \par Le funzioni che saranno da qui demandate all'applicativo Server saranno:
+    \par Le funzioni da qui demandate all'applicativo Server sono:
     
     \begin{itemize}
     
-        \item Richiesta di previsioni meteo da providers esterni: data la lista di providers a cui ci siamo registrati o abbonati a piani a pagamento, quando il nostro server viene interrogato per una previsione meteo ne effettuerà tante quante sono le risorse esterne in questione e non appena i risultati saranno ricevuti, devono essere immediatamente processati e forniti in input se le modalità lo consentono, altrimenti una volta che saranno tutti pronti potranno essere spediti indietro tutti assieme. Le unità di misura dovranno essere tutte uniformi e convertite all'occorrenza.
+        \item Richiesta di previsioni meteo da providers esterni: ci siamo registrati ai seguenti provider di previsioni meteo internazionali:
         
-        \par I providers meteo esterni possono anche essere le centraline degli utenti a patto che esse siano in una zona vicina a quella della richiesta della previsione.
+        \begin{itemize}
+            
+            \item Open Weather Map
+            \item Troposphere
         
-        \item Richiesta di autenticazione da parte dei client: date le credenziali degli utenti, il server si deve occupare di verificarne la presenza nella base dati degli utenti registrati il sito e fornire il risultato di questa indagine. Dopo averne verificato l'autenticità e la validità, deve essere rilasciato un token di autenticazione da utilizzare nel caso in cui bisognasse richiedere delle risorse protette dei singoli utenti per verificarne la proprietà
+        \end{itemize}
         
-        \item Richiesta di feedbacks dei providers meteo: fornire un sistema di recensioni che è possibile lasciare per ogni provider in base alla corretezza della loro previsioni meteo rilasciare, per poi poterle anche richiedere l'elenco di tutte quelle rilasciate per i providers e una valutazione media dell'affidabilità di un determinato servizio.
+        Quando il server viene interrogato per una previsione, la richiede a sua volta alle sorgenti di dati disponibili, che possono essere:
         
-        \item Notifica di previsioni meteo a caselle di posta elettronica: configurando un account di posta elettronica per il proprio utente, il server deve poter inviare delle emails a chi ne fa richiesta per poter conoscere all'inizio della propria giornata o nel momento che si ritiene più opportuno le previsioni per la località preferita.
+        \begin{itemize}
+            \item Servizi esterni (sopra citati)
+            \item Centraline degli utenti registrati
+        \end{itemize}
+        
+        Non appena i risultati saranno ricevuti, sono immediatamente processati e forniti in output. Le unità di misura devono essere tutte uniformi e convertite all'occorrenza.
+        
+        \item Richiesta di autenticazione da parte dei client: date le credenziali degli utenti, il server si deve occupare di verificarne la presenza nella base dati degli utenti registrati nel sito. Dopo averne verificato l'autenticità e la validità, deve rilasciare un token di autenticazione da utilizzare nel caso in cui bisognasse richiedere delle risorse protette.
+        
+        \item Richiesta di feedbacks dei providers meteo: fornire un sistema di recensioni, le quali possono essere lasciate per ogni provider in base alla correttezza delle sue previsioni meteo. Successivamente calcolare la valutazione media di ogni servizio consultabile.
+        
+        \item Notifica di previsioni meteo a caselle di posta elettronica: configurando un account di posta elettronica per il proprio utente, il server deve poter inviare delle emails a chi ne fa richiesta per poter conoscere, all'inizio della propria giornata o nel momento che si ritiene più opportuno, le previsioni per la località preferita.
         
     \end{itemize}
     
-    \par Le funzioni che saranno da qui demandate all'applicativo Client saranno:
+    \par Le funzioni da qui demandate all'applicativo Client sono:
     
     \begin{itemize}
     
         \item Presentazione del progetto, degli autori e delle funzionalità messe a disposizione.
         
-        \item Fornitura di un'interfaccia utente semplificata per la richiesta delle previsioni meteo all'applicativo Server che renda comodo ed intuitivo la consultazione e la fruizione delle previsioni meteo dei vari providers, con calcolo automatico di statistiche relative alla distribuzione, alle differenze e similitudini dei risultati ottenuti mano a mano che sono pronti ed opportunamente processati ed inviati dal Server.
+        \item Fornitura di un'interfaccia utente semplificata per la richiesta delle previsioni meteo all'applicativo Server:
         
-        \item Gestione delle impostazioni e dei dati personali degli utenti: registrandosi al sito, ogni utente fornisce un insieme di dati e informazioni che devono essere mantenute, consultabili e modificabili agilmente dall'utente. Le informazioni gestite comprendono anche la località preferita dell'utente, le centraline registrate e i feedbacks rilasciati.
+        \begin{itemize}
+            \item che renda comodo ed intuitivo la consultazione e la fruizione delle previsioni meteo dei vari providers
+            
+            \item che calcoli in automatico le statistiche relative alla distribuzione, alle differenze e similitudini dei risultati ottenuti dalle api
+        \end{itemize}
         
-        \item Gestione dei feedbacks rilasciati dagli utenti: deve rendere possibile creare delle recensioni per i providers e renderle consultabili da tutti gli utenti, assieme ad una valutazione complessiva del servizio stesso.
+        \item Gestione delle impostazioni e dei dati personali degli utenti: registrandosi al sito, ogni utente fornisce un insieme di dati e informazioni che devono essere mantenute, consultabili e modificabili agilmente. Le informazioni gestite comprendono anche la località preferita dell'utente, le centraline registrate e i feedbacks rilasciati.
+        
+        \item Gestione dei feedbacks rilasciati dagli utenti: deve rendere possibile creare delle recensioni per i providers e renderle consultabili da tutti gli utenti, assieme alla valutazione media del servizio stesso.
     
     \end{itemize}
     
     \par Oltre a questi componenti deve essere sviluppato anche il componente per simulare una centralina meteo amatoriale che possa ricevere le richieste del server per ottenere le previsioni meteo della zona in cui è situata. Per fare questo, abbiamo creato un nuovo progetto indipendente che assolva a questi compiti.
+
+    \begin{figure}[H]
+        \caption{Architettura Generale}
+        \label{fig:General}
+        \centering
+        \includegraphics[width=0.5\textwidth]{DrawIo/General.png}
+    \end{figure}
     
     \par Nel seguente schema vengono anche mostrati altri due componenti, chiamati Providers, che rappresentano i servizi esterni a cui ci affidiamo per ottenere dei dati meteo veritieri.
-    
-    METTERE IL NUOVO SCHEMA
     
     \section{Scelte Tecnologiche Cruciali}
     Di seguito alcune scelte tecnologiche cruciali
@@ -51,3 +76,9 @@
         \subsection{Client-Server}
         Descrivere come il Client esegue le richieste al Server, come il Server esegua le richieste agli n providers, come essi rispondono al Server e come infine il Server risponde al Client.
     
+    \begin{figure}[H]
+        \caption{Architettura Generale}
+        \label{fig:General}
+        \centering
+        \includegraphics[width=0.5\textwidth]{DrawIo/General.png}
+    \end{figure}
