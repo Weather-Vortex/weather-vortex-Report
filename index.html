@@ -226,15 +226,15 @@ Ognuno era delegato al testing e agli User Acceptance Test sulla propria parte d
 </section>
 <section id="foogantt-chart" class="level5" data-number="3.2.0.0.2">
 <h5 data-number="3.2.0.0.2"><span class="header-section-number">3.2.0.0.2</span> Gantt Chart: </h5>
-<p>A partire da inizio progetto si &#xE8; stilato un diagramma di Gantt, uno strumento utile per la pianificazione dei progetti.</p>
+<p>A partire da inizio progetto si &#xE8; stilato un diagramma di Gantt, uno strumento utile per la pianificazione dei progetti. Il diagramma ha aiutato a mantenere la costanza e un ritmo nel progetto molto pi&#xF9; serrato. Nel capitolo relativo agli sprint, in [Fig. <a href="#foofig:Gantt" data-reference-type="ref" data-reference="fig:Gantt">10.1</a>] si riporta il diagramma di Gantt risultante.</p>
 </section>
 <section id="foolicensing" class="level5" data-number="3.2.0.0.3">
 <h5 data-number="3.2.0.0.3"><span class="header-section-number">3.2.0.0.3</span> Licensing: </h5>
-<p>Per quanto riguarda la gestione delle licenze, &#xE8; stato scelta, tra le varie disponibili, la licenza GNU General Public Service. E&#x2019; una licenza copyleft, ovvero un tipo di licenza che viene applicata ai software open source. Il programma pu&#xF2; essere quindi distribuito liberamente, modificato e migliorato, con la clausola di non cambiare licenza.</p>
+<p>Per quanto riguarda la gestione delle licenze, &#xE8; stato scelta, tra le varie disponibili, la licenza GNU General Public Service. E&#x2019; una licenza copyleft, ovvero un tipo di licenza che viene applicata ai software open source. Il programma pu&#xF2; essere quindi distribuito liberamente, modificato e migliorato, con la clausola di non cambiare licenza. Questo tuttavia impone a tutti i software derivati di mantenere il codice opensource, anche in caso di commercializzazione a pagamento. Nonostante alcune aziende non possano usare il codice qualora volessero incorporarlo in prodotti in cui il codice non &#xE8; pubblico, consciamente &#xE8; stata fatta questa scelta per supportare l&#x2019;opensource. Per referenze &#xE8; possibile consultare un riassunto dello spettro delle licenze a questo <a href="https://choosealicense.com/licenses/">link</a>.</p>
 </section>
 <section id="fooversioning" class="level5" data-number="3.2.0.0.4">
 <h5 data-number="3.2.0.0.4"><span class="header-section-number">3.2.0.0.4</span> Versioning: </h5>
-<p>Per il versioning ci si &#xE8; avvalsi di Git e come piattaforma web di Github che incorpora le funzionalit&#xE0; di controllo di versione di git.</p>
+<p>Per il versioning ci si &#xE8; avvalsi di Git e come piattaforma web di GitHub che incorpora le funzionalit&#xE0; di controllo di versione di Git.</p>
 </section>
 <section id="foogithub-issues-and-project-boards" class="level5" data-number="3.2.0.0.5">
 <h5 data-number="3.2.0.0.5"><span class="header-section-number">3.2.0.0.5</span> Github Issues and Project Boards: </h5>
@@ -312,29 +312,29 @@ Periodicamente quindi veniva fatta una release sul branch main. Il codice sul br
 <h2 data-number="4.3"><span class="header-section-number">4.3</span> Requisiti Funzionali</h2>
 <p>Di seguito si riportano i requisiti funzionali, descrivendo in modo pi&#xF9; dettagliato possibile le funzionalit&#xE0; che deve avere l&#x2019;applicazione:</p>
 <ul>
-<li><p>L&#x2019;applicativo dovr&#xE0; fornire la possibilit&#xE0; di aggiungere una previsione inserendo una localit&#xE0; specifica o tramite coordinate geografiche.</p></li>
-<li><p>L&#x2019;applicativo dovr&#xE0; <strong>ridurre il tempo necessario</strong> per consultare pi&#xF9; previsioni.</p></li>
-<li><p>L&#x2019;applicazione dovr&#xE0; fornire i seguenti dettagli delle previsioni: condizione meteo, temperatura, pressione, quantit&#xE0; di pioggia e umidit&#xE0;.</p></li>
-<li><p>Il sistema dovr&#xE0; produrre le previsioni aggregate come media di tutte le previsioni dei vari provider.</p></li>
-<li><p>Il sistema deve offrire previsioni correnti e fino a tre giorni.</p></li>
-<li><p>L&#x2019;applicativo dovr&#xE0; fornire per ogni provider meteo un indice di affidabilit&#xE0;, dato dalla media dei ratings dei suoi feedbacks.</p></li>
-<li><p>L&#x2019;applicativo dovr&#xE0; fornire maggiori funzionalit&#xE0; per un utente registrato quali poter aggiungere, aggiornare oppure rimuovere le centraline, la localit&#xE0; preferita e eventuali feedbacks sui provider.</p></li>
-<li><p>Il sistema fornir&#xE0; un meccanismo di notifiche che invii ad una certa ora le previsioni giornaliere sulla localit&#xE0; preferita dell&#x2019;utente via email.</p></li>
-<li><p>L&#x2019;applicativo dovr&#xE0; salvarsi in memoria le ultime previsioni in modo da risparmiare tempo su richieste successive della stessa zona.</p></li>
-<li><p>L&#x2019;applicativo dovr&#xE0; mostrare degli alert in caso di errori (ad esempio: qualora le previsioni non siano state caricate correttamente oppure ci sia stato un errore durante la registrazione o il login, etc...).</p></li>
-<li><p>L&#x2019;applicativo dovr&#xE0; mostrare anche degli alert qualora le operazioni siano avvenute con successo per facilitare l&#x2019;esperienza utente (Ad esempio: la registrazione o il login sono avvenuti con successo, la centralina o il feedback sono stati aggiunti correttamente, etc...).</p></li>
+<li><p>fornire la possibilit&#xE0; di aggiungere una previsione inserendo una localit&#xE0; specifica o tramite coordinate geografiche.</p></li>
+<li><p>ridurre il tempo necessario per consultare pi&#xF9; previsioni.</p></li>
+<li><p>fornire i seguenti dettagli delle previsioni: condizione meteo, temperatura, pressione, quantit&#xE0; di pioggia e umidit&#xE0;.</p></li>
+<li><p>produrre le previsioni aggregate come media di tutte le previsioni dei vari provider.</p></li>
+<li><p>offrire previsioni correnti e fino a tre giorni.</p></li>
+<li><p>fornire per ogni provider meteo un indice di affidabilit&#xE0;, dato dalla media dei ratings dei suoi feedbacks.</p></li>
+<li><p>fornire maggiori funzionalit&#xE0; per un utente registrato quali poter aggiungere, aggiornare oppure rimuovere le centraline, la localit&#xE0; preferita e eventuali feedbacks sui provider.</p></li>
+<li><p>fornire un meccanismo di notifiche che invii ad una certa ora le previsioni giornaliere sulla localit&#xE0; preferita dell&#x2019;utente via email.</p></li>
+<li><p>salvare in memoria le ultime previsioni in modo da risparmiare tempo su richieste successive della stessa zona.</p></li>
+<li><p>mostrare degli alert in caso di errori (ad esempio: qualora le previsioni non siano state caricate correttamente oppure ci sia stato un errore durante la registrazione o il login, etc...).</p></li>
+<li><p>mostrare anche degli alert qualora le operazioni siano avvenute con successo per facilitare l&#x2019;esperienza utente (ad esempio: la registrazione o il login sono avvenuti con successo, la centralina o il feedback sono stati aggiunti correttamente, etc...).</p></li>
 </ul>
 <section id="fooapplicativo-web" class="level3" data-number="4.3.1">
 <h3 data-number="4.3.1"><span class="header-section-number">4.3.1</span> Applicativo web</h3>
-<p>L&#x2019;applicativo web deve consentire ad ogni utente di accedere con una serie di credenziali, e dividere le operazioni consentite in base ai permessi concessi. Il sito &#xE8; suddiviso pagine :</p>
+<p>L&#x2019;applicativo web deve consentire ad ogni utente di accedere con una serie di credenziali, e dividere le operazioni consentite in base ai permessi concessi. Il sito &#xE8; suddiviso in pagine:</p>
 <ul>
-<li><p><strong>Pagine di autenticazione</strong> Pagina di login per effettuare l&#x2019;accesso e pagina di registrazione per i nuovi utenti.</p></li>
-<li><p><strong>home</strong> La pagina principale in cui &#xE8; possibile registrarsi, accedere, visualizzare le previsioni. E&#x2019; visibile da chiunque.</p></li>
-<li><p><strong>Pagina Profilo</strong>: E&#x2019; il profilo privato dell&#x2019;utente a cui si pu&#xF2; accedere solo se si &#xE8; registrati. Permette di visualizzare e eventualmente modificare le proprie informazioni, visualizzare o cancellare i propri feedbacks, visualizzare, modificare o cancellare le proprie centraline.</p></li>
-<li><p><strong>Pagina Profilo Pubblico</strong>: Serve per visualizzare le informazioni di un altro utente. E&#x2019; visibile da chiunque.</p></li>
-<li><p><strong>Pagina Forecast</strong>: Pagina dove &#xE8; possibile visualizzare il meteo corrente e le previsioni dei prossimi tre giorni, sia aggregate che non. E&#x2019; visibile da chiunque.</p></li>
-<li><p><strong>Pagina Feedbacks</strong>: Pagina dove &#xE8; possibile visualizzare i feedbacks dei vari provider e consultare i loro indici di affidabilit&#xE0;. E&#x2019; visibile da chiunque, ma si possono aggiungere feedbacks solo se registrati.</p></li>
-<li><p><strong>Pagina About</strong>: Pagina dove &#xE8; possibile visualizzare informazioni sugli sviluppatori del progetto e sullo scopo dell&#x2019;applicativo, con un modulo di contatto agli admin.</p></li>
+<li><p><strong>Autenticazione</strong>: Pagina di login per effettuare l&#x2019;accesso e pagina di registrazione per i nuovi utenti.</p></li>
+<li><p><strong>Home</strong>: dove &#xE8; possibile registrarsi, accedere, visualizzare le previsioni. E&#x2019; visibile da chiunque. Mostra brevemente, con l&#x2019;aiuto di immagini, le funzionalit&#xE0; del sito.</p></li>
+<li><p><strong>Profilo Privato</strong>: dove visualizzare e modificare le proprie informazioni o gestire i propri feedbacks e centraline. Solo il proprietario del profilo pu&#xF2; accedere a questa pagina.</p></li>
+<li><p><strong>Profilo Pubblico</strong>: serve per visualizzare le informazioni di un altro utente. E&#x2019; visibile da chiunque.</p></li>
+<li><p><strong>Forecast</strong> dove vengono visualizzate le condizioni meteo correnti e le previsioni dei prossimi tre giorni. Queste possono essere sia aggregate che non. E&#x2019; visibile da chiunque.</p></li>
+<li><p><strong>Feedbacks</strong> visualizza i feedbacks dei vari provider e i loro indici di affidabilit&#xE0;. E&#x2019; visibile da chiunque, ma si possono aggiungere feedbacks solo se registrati.</p></li>
+<li><p><strong>About</strong> mostra informazioni sugli sviluppatori del progetto e sullo scopo dell&#x2019;applicativo, con un modulo di contatto per chiedere informazioni o segnalare problemi agli admin.</p></li>
 </ul>
 </section>
 </section>
@@ -343,11 +343,10 @@ Periodicamente quindi veniva fatta una release sul branch main. Il codice sul br
 <p>Il sistema dovr&#xE0; rispettare i seguenti requisiti non funzionali per un&#x2019;alta <strong>qualit&#xE0;</strong>:</p>
 <ul>
 <li><p><strong>Reattivit&#xE0;</strong>: L&#x2019;applicazione dovr&#xE0; essere reattiva e fornire un basso tempo di risposta, tutte le azioni dovranno essere processate istantaneamente e le informazioni dovranno essere aggiornate subito.</p></li>
-<li><p><strong>Modularit&#xE0;</strong>:L&#x2019;applicazione dovr&#xE0; essere modulabile, con lo scopo di aggiungere senza problemi eventuali nuove funzionalit&#xE0;.</p></li>
+<li><p><strong>Modularit&#xE0;</strong>: L&#x2019;applicazione dovr&#xE0; essere modulabile, con lo scopo di aggiungere senza problemi eventuali nuove funzionalit&#xE0;.</p></li>
 <li><p><strong>Scalabilit&#xE0;</strong>: L&#x2019;applicativo dovr&#xE0; necessariamente consentire di aumentare o diminuire il numero di utenti gestiti senza particolari problemi.</p></li>
-<li><p><strong>Disponibilit&#xE0;</strong>:L&#x2019;applicazione dovr&#xE0; essere disponibile 24/7. L&#x2019;utilizzo di pi&#xF9; api per il meteo , oltre allo scopo di fornire l&#x2019;aggregazione delle previsioni, ha anche quello di mantenere le previsioni disponibili anche se qualche provider &#xE8; momentaneamente down.</p></li>
-<li><p>L&#x2019;applicazione dovr&#xE0; lavorare senza errori, essere veloce e fornire una buona "user experience".</p></li>
-<li><p>Il prodotto dovr&#xE0; fornire un&#x2019;interfaccia responsive e usabile.</p></li>
+<li><p><strong>Disponibilit&#xE0;</strong>: L&#x2019;applicazione dovr&#xE0; essere disponibile 24/7. L&#x2019;utilizzo di pi&#xF9; api per il meteo , oltre allo scopo di fornire l&#x2019;aggregazione delle previsioni, ha anche quello di mantenere le previsioni disponibili anche se qualche provider &#xE8; momentaneamente down.</p></li>
+<li><p>L&#x2019;applicazione dovr&#xE0; lavorare senza errori e fornire una buona "user experience" tramite un&#x2019;interfaccia responsive e usabile.</p></li>
 </ul>
 </section>
 <section id="foorequisiti-implementativi" class="level2" data-number="4.5">
@@ -361,28 +360,42 @@ Periodicamente quindi veniva fatta una release sul branch main. Il codice sul br
 </section>
 <section id="foodesign-architetturale" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Design Architetturale</h1>
-<p>fase di Design Architetturale.</p>
 <section id="fooarchitettura-generale" class="level2" data-number="5.1">
 <h2 data-number="5.1"><span class="header-section-number">5.1</span> Architettura Generale</h2>
-<p>Abbiamo deciso di dividere il nostro sistema in due macro componenti: un applicativo server, che si occupi di gestire le richieste degli utenti, e un applicativo client, che si occupi di interrogare il server per richiedere informazioni. Le specifiche imposte dalla prova di esame in corso imponevano di usare determinate tecnologie per lo sviluppo di tali componenti ma non imponevano altri vincoli. Abbiamo scelto noi di sviluppare i due componenti come progetti separati per aumentare l&#x2019;indipendenza di un componente rispetto l&#x2019;altro.</p>
-<p>Le funzioni che saranno da qui demandate all&#x2019;applicativo Server saranno:</p>
+<p>Abbiamo deciso di dividere il nostro sistema in due macro componenti: un applicativo server, che si occupi di gestire le richieste degli utenti, e un applicativo client, che si occupi di interrogare il server per richiedere informazioni. Le specifiche imposte dalla prova di esame in corso imponevano di usare determinate tecnologie per lo sviluppo di tali componenti, ma non imponevano altri vincoli. Abbiamo scelto noi di sviluppare i due componenti come progetti separati per aumentare l&#x2019;indipendenza di un componente rispetto l&#x2019;altro.</p>
+<p>Le funzioni da qui demandate all&#x2019;applicativo Server sono:</p>
 <ul>
-<li><p>Richiesta di previsioni meteo da providers esterni: data la lista di providers a cui ci siamo registrati o abbonati a piani a pagamento, quando il nostro server viene interrogato per una previsione meteo ne effettuer&#xE0; tante quante sono le risorse esterne in questione e non appena i risultati saranno ricevuti, devono essere immediatamente processati e forniti in input se le modalit&#xE0; lo consentono, altrimenti una volta che saranno tutti pronti potranno essere spediti indietro tutti assieme. Le unit&#xE0; di misura dovranno essere tutte uniformi e convertite all&#x2019;occorrenza.</p>
-<p>I providers meteo esterni possono anche essere le centraline degli utenti a patto che esse siano in una zona vicina a quella della richiesta della previsione.</p></li>
-<li><p>Richiesta di autenticazione da parte dei client: date le credenziali degli utenti, il server si deve occupare di verificarne la presenza nella base dati degli utenti registrati il sito e fornire il risultato di questa indagine. Dopo averne verificato l&#x2019;autenticit&#xE0; e la validit&#xE0;, deve essere rilasciato un token di autenticazione da utilizzare nel caso in cui bisognasse richiedere delle risorse protette dei singoli utenti per verificarne la propriet&#xE0;</p></li>
-<li><p>Richiesta di feedbacks dei providers meteo: fornire un sistema di recensioni che &#xE8; possibile lasciare per ogni provider in base alla corretezza della loro previsioni meteo rilasciare, per poi poterle anche richiedere l&#x2019;elenco di tutte quelle rilasciate per i providers e una valutazione media dell&#x2019;affidabilit&#xE0; di un determinato servizio.</p></li>
-<li><p>Notifica di previsioni meteo a caselle di posta elettronica: configurando un account di posta elettronica per il proprio utente, il server deve poter inviare delle emails a chi ne fa richiesta per poter conoscere all&#x2019;inizio della propria giornata o nel momento che si ritiene pi&#xF9; opportuno le previsioni per la localit&#xE0; preferita.</p></li>
+<li><p>Richiesta di previsioni meteo da providers esterni: ci siamo registrati ai seguenti provider di previsioni meteo internazionali:</p>
+<ul>
+<li><p>Open Weather Map</p></li>
+<li><p>Troposphere</p></li>
 </ul>
-<p>Le funzioni che saranno da qui demandate all&#x2019;applicativo Client saranno:</p>
+<p>Quando il server viene interrogato per una previsione, la richiede a sua volta alle sorgenti di dati disponibili, che possono essere:</p>
+<ul>
+<li><p>Servizi esterni (sopra citati)</p></li>
+<li><p>Centraline degli utenti registrati</p></li>
+</ul>
+<p>Non appena i risultati saranno ricevuti, sono immediatamente processati e forniti in output. Le unit&#xE0; di misura devono essere tutte uniformi e convertite all&#x2019;occorrenza.</p></li>
+<li><p>Richiesta di autenticazione da parte dei client: date le credenziali degli utenti, il server si deve occupare di verificarne la presenza nella base dati degli utenti registrati nel sito. Dopo averne verificato l&#x2019;autenticit&#xE0; e la validit&#xE0;, deve rilasciare un token di autenticazione da utilizzare nel caso in cui bisognasse richiedere delle risorse protette.</p></li>
+<li><p>Richiesta di feedbacks dei providers meteo: fornire un sistema di recensioni, le quali possono essere lasciate per ogni provider in base alla correttezza delle sue previsioni meteo. Successivamente calcolare la valutazione media di ogni servizio consultabile.</p></li>
+<li><p>Notifica di previsioni meteo a caselle di posta elettronica: configurando un account di posta elettronica per il proprio utente, il server deve poter inviare delle emails a chi ne fa richiesta per poter conoscere, all&#x2019;inizio della propria giornata o nel momento che si ritiene pi&#xF9; opportuno, le previsioni per la localit&#xE0; preferita.</p></li>
+</ul>
+<p>Le funzioni da qui demandate all&#x2019;applicativo Client sono:</p>
 <ul>
 <li><p>Presentazione del progetto, degli autori e delle funzionalit&#xE0; messe a disposizione.</p></li>
-<li><p>Fornitura di un&#x2019;interfaccia utente semplificata per la richiesta delle previsioni meteo all&#x2019;applicativo Server che renda comodo ed intuitivo la consultazione e la fruizione delle previsioni meteo dei vari providers, con calcolo automatico di statistiche relative alla distribuzione, alle differenze e similitudini dei risultati ottenuti mano a mano che sono pronti ed opportunamente processati ed inviati dal Server.</p></li>
-<li><p>Gestione delle impostazioni e dei dati personali degli utenti: registrandosi al sito, ogni utente fornisce un insieme di dati e informazioni che devono essere mantenute, consultabili e modificabili agilmente dall&#x2019;utente. Le informazioni gestite comprendono anche la localit&#xE0; preferita dell&#x2019;utente, le centraline registrate e i feedbacks rilasciati.</p></li>
-<li><p>Gestione dei feedbacks rilasciati dagli utenti: deve rendere possibile creare delle recensioni per i providers e renderle consultabili da tutti gli utenti, assieme ad una valutazione complessiva del servizio stesso.</p></li>
+<li><p>Fornitura di un&#x2019;interfaccia utente semplificata per la richiesta delle previsioni meteo all&#x2019;applicativo Server:</p>
+<ul>
+<li><p>che renda comodo ed intuitivo la consultazione e la fruizione delle previsioni meteo dei vari providers</p></li>
+<li><p>che calcoli in automatico le statistiche relative alla distribuzione, alle differenze e similitudini dei risultati ottenuti dalle api</p></li>
+</ul></li>
+<li><p>Gestione delle impostazioni e dei dati personali degli utenti: registrandosi al sito, ogni utente fornisce un insieme di dati e informazioni che devono essere mantenute, consultabili e modificabili agilmente. Le informazioni gestite comprendono anche la localit&#xE0; preferita dell&#x2019;utente, le centraline registrate e i feedbacks rilasciati.</p></li>
+<li><p>Gestione dei feedbacks rilasciati dagli utenti: deve rendere possibile creare delle recensioni per i providers e renderle consultabili da tutti gli utenti, assieme alla valutazione media del servizio stesso.</p></li>
 </ul>
 <p>Oltre a questi componenti deve essere sviluppato anche il componente per simulare una centralina meteo amatoriale che possa ricevere le richieste del server per ottenere le previsioni meteo della zona in cui &#xE8; situata. Per fare questo, abbiamo creato un nuovo progetto indipendente che assolva a questi compiti.</p>
+<figure>
+<img src="DrawIo/General.png" id="foofig:General" style="width:50.0%" alt="Architettura Generale" /><figcaption aria-hidden="true">Architettura Generale</figcaption>
+</figure>
 <p>Nel seguente schema vengono anche mostrati altri due componenti, chiamati Providers, che rappresentano i servizi esterni a cui ci affidiamo per ottenere dei dati meteo veritieri.</p>
-<p>METTERE IL NUOVO SCHEMA</p>
 </section>
 <section id="fooscelte-tecnologiche-cruciali" class="level2" data-number="5.2">
 <h2 data-number="5.2"><span class="header-section-number">5.2</span> Scelte Tecnologiche Cruciali</h2>
@@ -393,6 +406,9 @@ Periodicamente quindi veniva fatta una release sul branch main. Il codice sul br
 <section id="fooclient-server" class="level3" data-number="5.3.1">
 <h3 data-number="5.3.1"><span class="header-section-number">5.3.1</span> Client-Server</h3>
 <p>Descrivere come il Client esegue le richieste al Server, come il Server esegua le richieste agli n providers, come essi rispondono al Server e come infine il Server risponde al Client.</p>
+<figure>
+<img src="DrawIo/forecast_request_activity_diagram.png" id="foofig:Forecast Request Activity Diagram" style="width:100.0%" alt="Diagramma delle attivit&#xE0; di una richiesta di previsioni dal Client al Server" /><figcaption aria-hidden="true">Diagramma delle attivit&#xE0; di una richiesta di previsioni dal Client al Server</figcaption>
+</figure>
 </section>
 </section>
 </section>
