@@ -4,7 +4,25 @@
 
 \chapter{Implementazione}
 \section{Server}
-Implementazione del server
+Implementazione del server\\
+\textit{Commento: questo secondo me è da fare insieme, ognuno può aggiungere qualcosa della propria parte. Magari scrive uno e l'altro se vuol dire qualcosa anche della sua parte la aggiunge.}
+
+\subsection{Autenticazione}
+\textit{TODO: Da finire, lo fa Silvia questa subsection, mettere anche un pezzo di codice}.\\ 
+Per l'autenticazione è stato deciso di utilizzare il sistema a token JWT, firmati dal backend. Al momento
+del login il server rilascia un token al client contenente dei dati
+utili all’autenticazione; in questa maniera, durante le successive richieste,
+il client invierà anche il token ricevuto, e il server lo controllerà per verificare
+se è valido e quindi autorizzare il client. In questa maniera il server
+diventa stateless, non avendo bisogno di salvare le informazioni relative
+alle sessioni dei vari client collegati.\\
+
+Si è avuta la necessità anche di gestire alcuni dati sensibili dell'utente, come le password. E' stata utilizzata bcrypt, una funzione di hashing per salvare le password in maniera sicura
+nel database; viene utilizzato al momento della registrazione di un utente
+quando si deve salvare la password nel db (viene salvato il suo hash con il
+relativo valore di sale), e al login quando bisogna confrontare la password
+ricevuta dall’utente con quella salvata. 
+
 
 
 \section{Client}

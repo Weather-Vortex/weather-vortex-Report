@@ -8,7 +8,7 @@
     
     Abbiamo deciso di dividere il nostro sistema in due macro componenti: un applicativo server, che si occupi di gestire le richieste degli utenti, e un applicativo client, che si occupi di interrogare il server per richiedere informazioni. Le specifiche imposte dalla prova di esame in corso imponevano di usare determinate tecnologie per lo sviluppo di tali componenti, ma non imponevano altri vincoli. Abbiamo scelto noi di sviluppare i due componenti come progetti separati per aumentare l'indipendenza di un componente rispetto l'altro.
     
-    \par Le funzioni da qui demandate all'applicativo Server sono:
+    \par Le funzioni da qui demandate all'applicativo \textbf{Server} sono:
     
     \begin{itemize}
     
@@ -38,7 +38,7 @@
         
     \end{itemize}
     
-    \par Le funzioni da qui demandate all'applicativo Client sono:
+    \par Le funzioni da qui demandate all'applicativo \textbf{Client} sono:
     
     \begin{itemize}
     
@@ -70,15 +70,27 @@
     \par Nel seguente schema vengono anche mostrati altri due componenti, chiamati Providers, che rappresentano i servizi esterni a cui ci affidiamo per ottenere dei dati meteo veritieri.
     
     \section{Scelte Tecnologiche Cruciali}
-    Di seguito alcune scelte tecnologiche cruciali
+    
+    Avendo l'esigenza di fornire all'utente i risultati delle previsioni meteo da lui richieste non appena essi fossero stati pronti, una scelta cruciale per il progetto è stata scegliere riuscire una tecnologia per mantenere un canale dati aperto tra il Client e il Server. Il protocollo HTTP non fornisce di per se un meccanismo tale per cui sia il Server ad inviare una richiesta di connessione al Client. Per questo motivo si è optato ad un approccio basato sulle Sockets. In particolare, abbiamo scelto la libreria \textit{Sockets.IO}, già vista a lezione.
 
     \section{Pattern Architetturali Utilizzati}
-        \subsection{Client-Server}
-        Descrivere come il Client esegue le richieste al Server, come il Server esegua le richieste agli n providers, come essi rispondono al Server e come infine il Server risponde al Client.
     
-    \begin{figure}[H]
-        \caption{Diagramma delle attività di una richiesta di previsioni dal Client al Server}
-        \label{fig:Forecast Request Activity Diagram}
-        \centering
-        \includegraphics[width=1\textwidth]{DrawIo/forecast_request_activity_diagram.png}
-    \end{figure}
+        
+    
+        \subsection{Client-Server}
+        
+            Nella figura 5.2 è illustrato come avviene un flusso di richieste di previsioni meteo dal Client al Server.
+        
+            \begin{figure}[H]
+            
+                \caption{Diagramma delle attività di una richiesta di previsioni dal Client al Server}
+                
+                \label{fig:Forecast Request Activity Diagram}
+                
+                \centering
+                
+                \includegraphics[width=0.75\textwidth]{DrawIo/forecast_request_activity_diagram.png}
+                
+            \end{figure}
+            
+            Procedendo in ordine numerico, al punto 1., il Client invia una richiesta al Server contenente il nome della località di cui vuole sapere le coordinate. Il Server nei punti 2. e 3. prepara la richiesta da inviare ai vari provider di previsioni meteo. Nello specifico vengono preparate solamente altre due richieste per altrettanti providers, ma in un caso reale potrebbero essercene molte di più. Da notare come in questo punto avvenga una divisione del flusso computazionale principale in due flussi separati ed indipendenti. Nei punti 4. e 5. tali flussi eseguono autonomamente le richieste delle previsioni al provider meteo esterno a loro assegnato. Ricevuta la risposta nei punti 6. e 7., la inoltrano al Client nei punti 7. e 8..

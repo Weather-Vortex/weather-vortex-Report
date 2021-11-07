@@ -59,8 +59,7 @@ In questa fase sono stati individuati i \textbf{requisiti del sistema}, partendo
 	\item fornire maggiori funzionalità per un utente registrato quali poter aggiungere, aggiornare oppure rimuovere le centraline, la località preferita e eventuali feedbacks sui provider.
 	\item fornire un meccanismo di notifiche che invii ad una certa ora le previsioni giornaliere sulla località preferita dell'utente via email.
 	\item salvare in memoria le ultime previsioni in modo da risparmiare tempo su richieste successive della stessa zona. 
-	\item mostrare degli alert in caso di errori (ad esempio: qualora le previsioni non siano state caricate correttamente oppure ci sia stato un errore durante la registrazione o il login, etc...).
-	\item mostrare anche degli alert qualora le operazioni siano avvenute con successo per facilitare l'esperienza utente (ad esempio: la registrazione o il login sono avvenuti con successo, la centralina o il feedback sono stati aggiunti correttamente, etc...).
+	
 
 	\end{itemize}
         \subsection{Applicativo web}
@@ -102,13 +101,19 @@ In questa fase sono stati individuati i \textbf{requisiti del sistema}, partendo
                 
                 \item \textbf{Disponibilità}: L'applicazione dovrà essere disponibile 24/7. L'utilizzo di più api per il meteo , oltre allo scopo di fornire l'aggregazione delle previsioni, ha anche quello di mantenere le previsioni disponibili anche se qualche provider è momentaneamente down.
                 
-                \item L'applicazione dovrà lavorare senza errori e fornire una buona "user experience" tramite un'interfaccia responsive e usabile.
+                \item L'applicazione dovrà lavorare senza errori e fornire una buona "user experience" tramite un'interfaccia responsive e usabile. Mostrerà:
+                \begin{itemize}
+                     \item alert in caso di errori (ad esempio: qualora le previsioni non siano state caricate correttamente oppure ci sia stato un errore durante la registrazione o il login, etc...).
+	\item alert in caso le operazioni siano avvenute con successo per facilitare l'esperienza utente (ad esempio: la registrazione o il login sono avvenuti con successo, la centralina o il feedback sono stati aggiunti correttamente, etc...).
+                \end{itemize}
+                
+               
             \end{itemize}
         
 
 	\section{Requisiti Implementativi}
-	Si definiscono i vincoli a livello tecnologico e di implementazione che sarà necessario rispettare nella realizzazione dell'applicativo.
 	
-	\subsection{Metodologie e Tecnologie Utilizzate}
-	In quanto progetto sviluppato per l'esame di Applicazioni e Servizi Web è necessario che le tecnologie usate rispettino gli standard di insegnamento. 
+	    Si definiscono i vincoli a livello tecnologico e di implementazione che sarà necessario rispettare nella realizzazione dell'applicativo.
 	
+	    \subsection{Metodologie e Tecnologie Utilizzate}
+	        In quanto progetto sviluppato per l'esame di Applicazioni e Servizi Web è necessario che le tecnologie usate rispettino gli standard di insegnamento. Per tale motivo è stato richiesto di utilizzare un elenco di tecnologie viste a lezione. Esse sono \textit{Node.JS}, \textit{MongoDB}, \textit{Express.JS} e un framework per lo sviluppo di applicazioni frontend tra \textit{Vue.JS}, \textit{Angular} o \textit{React}.
