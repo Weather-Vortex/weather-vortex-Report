@@ -6,13 +6,54 @@
 \section{Server}
 \textit{Commento: questo secondo me è da fare insieme, ognuno può aggiungere qualcosa della propria parte. Magari scrive uno e l'altro se vuol dire qualcosa anche della sua parte la aggiunge.}
 
-Per la parte backend ci si è avvalsi della tecnologia Nodejs + Express + MongoDb per il database.\\
-Per l'invio delle email gestito nel backend è stato utilizzato un modulo di NodeJs chiamato Nodemailer.\\
-Inoltre ci si è avvalsi della libreria Sockets.Io per una comunicazione bidirezionale tra client e server.
+Per la parte backend ci si è avvalsi della tecnologia Node.js, Express e MongoDb per il database. Per l'invio delle email è stato utilizzato un modulo di Node.js chiamato Nodemailer.
+
+
+Per supportare la comunicazione bidirezionale tra client e server ci si è avvalsi della libreria Sockets.Io.
+
 
 Si riportano ora alcuni aspetti implementativi del server che si ritiene opportuno evidenziare. 
+
 \subsection{Forecast e Socket.IO}
-scrivi se c'è qualche capitolo interessante da dire
+
+All'avvio del Server, viene subito richiamata la funzione di Sockets.IO per rimanere in ascolto di nuove connessioni da parte delle sockets dei clients per richiedere le previsioni meteo:
+
+\begin{lstlisting}[language=Javascript]
+io.on("connection", (socket) => {
+  socket.on("current", (arg) => {
+    if (arg.locality) {
+      // Retrieve forecasts by locality.
+    } else if (arg.latitude && arg.longitude) {
+      // Retrieve forecasts by geolocation position.
+    });
+    
+  socket.on("threedays", (arg) => {
+    // Same as before.
+  });
+});
+\end{lstlisting}
+
+In seguito, quando i risultati delle richieste di previsioni meteo ai servizi esterni sono pronti, vengono immediatamente inoltrati ai clients tramite gli eventi delle sockets:
+
+\begin{lstlisting}[language=Javascript]
+openWeatherStorage
+  .currentByLocation(latitude, longitude)
+  .then((result) => {
+    socket.emit("result", ...);
+  })
+  .catch((error) => {
+    socket.emit("forecast_error", ...);
+  });
+  
+troposphereStorage
+  .currentByLocation(latitude, longitude)
+  .then((result) => {
+    socket.emit("result", ...);
+  })
+  .catch((error) => {
+    socket.emit("forecast_error", ... );
+  });
+\end{lstlisting}
 
 \subsection{Autenticazione}
 

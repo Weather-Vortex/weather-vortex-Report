@@ -204,16 +204,16 @@ Serve per memorizzare le richieste di previsioni che sono state fatte.
     \item url: url della centralina.
 \end{itemize}
 \end{itemize}
+
 \subsection{Storage}
 Gli storage sono dei componenti che si occupano di manipolare i dati e i modelli dell'applicazione nascondendo il supporto di memorizzazione degli stessi. 
 \begin{itemize}
 \item{database storage} - storage che usa come supporto di memorizzazione il database.
 \item{webservice storage} - storage che richiede i dati ad un web service esterno. Nella nostro caso si tratta di gestire le richieste da provider esterni e recuperarne le previsioni.
-
-
 \end{itemize}
 
+\subsection{Controllers}
+I Controllers contengono la logica applicativa e si occupano di fornire i dati estratti dagli Storage agli utenti. Tra i compiti svolti rientrano l'invio di email e le risposte alle chiamate HTTP dei clients.
 
-
-
-
+\subsection{Routes}
+Le Routes si occupano di prendere in carico le chiamate HTTP in entrata e inoltrarle ai giusti Controllers. Anche le richieste che arrivano dalle Sockets per gestire le previsioni del meteo vengono smistate da questi componenti.
