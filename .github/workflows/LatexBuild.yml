@@ -96,7 +96,8 @@ jobs:
           then #if yes use it
               echo "::set-output name=RELEASE_NAME::$(echo ${{steps.extract_tag_msg.outputs.TAG_MSG}})" 
           else #if generate one new tag incrementing fixes number like x.y.z+1
-              val=$(git describe --tags --abbrev=0)
+              #val=$(git describe --tags --abbrev=0)
+              val=$(git tag | sort -V | tail -1)
               newval=$(echo ${val##*.})
               newval=$((newval+1))
               newval="${val%.*}.$newval"

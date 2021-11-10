@@ -4,21 +4,21 @@
 
 \chapter{Testing e Performance}
 
-Lo sviluppo delle applicazioni web a livello professionale richiede la qualità e la robustezza del codice che è stato prodotto. Per avere delle metriche concrete sulla qualità del prodotto, è necessario coprire il progetto di test, sia automatici che manuali.
+Lo sviluppo delle applicazioni web a livello professionale richiede la qualità e la robustezza del codice che è stato prodotto. Per avere delle metriche concrete su tali metriche, è necessario eseguire intensivamente ed estensivamente test sul prodotto, sia automatici che manuali.
 
 \section{Unit Test}
 
-Le parti più importanti inerenti la logica di business sono stati testati con gli unit test per migliorarne la robustezza e l'affidabilità. Molte componenti dell'applicativo Server sono state sviluppate con un approccio Test Driven Development e sono state controllate molte volte prima di essere messe in produzione.
+Le parti più importanti inerenti la logica di business sono stati testati con gli unit tests per migliorarne la robustezza e l'affidabilità. Molte componenti dell'applicativo Server sono state sviluppate con un approccio Test Driven Development e sono state controllate molte volte prima di essere messe in produzione.
 
 \par In generale si è cercato di tenere un approccio sistematico per affrontare i problemi:
 
 \begin{itemize}
 
-    \item Si cercava di modellare in modo il più reale possibile le entità che si sarebbero manipolate successivamente, cercando di capire il dominio del problema e quali fossero tutti i dati di cui avesse bisogno
+    \item Si cercava di modellare in modo il più reale possibile le entità che si sarebbero manipolate successivamente, cercando di capire il dominio del problema e quali fossero tutti i dati di cui si avesse bisogno;
     
-    \item Successivamente si sviluppava il componente che sarebbe stato delegato a interagire principalmente con la base dati di entità appena modellate creando prima i test automatici per controllare che i dati venissero manipolati correttamente a seconda delle necessità
+    \item Successivamente si sviluppava il componente che sarebbe stato delegato a interagire principalmente con la base dati delle entità appena modellate. Creati i test automatici per controllare che i dati venissero manipolati correttamente a seconda delle necessità, solamente in un secondo momento, dopo aver appurato il fallimento dei test appena scritti, si sarebbe proceduto a scrivere il codice necessario per farli riuscire;
     
-    \item In tal modo si sviluppavano anche i componenti della logica di business che dovevano gestire il susseguirsi delle operazioni sui dati in modo da completare i compiti da svolgere e i componenti che dovevano gestire le richieste dei client e fornire loro i dati richiesti.
+    \item Allo stesso modo, si sviluppavano anche i componenti della logica di business.
     
     \item Infine, al manifestarsi di ulteriori problemi e malfunzionamenti, si è sempre cercato innanzitutto di comprendere se ci fossero stati dei problemi nell'implementazione dei test e che le loro funzionalità fossero quelle che ci si aspettava. In tal caso, allora si procedeva alla stesura di altri test automatici che permettessero di riprodurre il problema e risolverlo.
     
