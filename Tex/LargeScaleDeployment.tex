@@ -3,18 +3,29 @@
 % In questa sezione va discussa, eventualmente con l'ausilio di opportuni diagrammi (componenti, deployment), l'evoluzione del progetto presentato immaginando che venga adottato su larga scala. I dettagli qui esposti devono quindi astrarre dalle specifiche dell'elaborato qualora l'implementazione sia stata focalizzata su uno scenario isolato. A titolo d'esempio, qualora applicabile, devono essere evidenziate le criticità che si potrebbero incontrare e devono essere proposte soluzioni tipiche in contesti di cloud architecture per garantire un'adeguata resilienza, in termini di availability e scalability del sistema.
 
 \chapter{Deployment}
+
 In questo capitolo viene spiegato come scaricare e utilizzare la piattaforma
-WeatherVortex. Essa è consultabile a questo link: \href{https://github.com/Weather-Vortex}{WeatherVortex Organization}
+WeatherVortex. Essa è consultabile a questo link: \href{https://github.com/Weather-Vortex}{WeatherVortex Organization}.
+
 \section{Github pages e Heroku}
-E' stato anche fatto il deploy del client sulle Github Pages e il deploy del backend su Heroku. Github Pages è una funzionalità di Github che permette di generare e ospitare il sito web memorizzato nel repository su Github. Heroku è una piattaforma cloud come servizio progettata per aiutare a realizzare e distribuire applicazioni online. Heroku si integra con Github per rendere semplice il deploy di codice in Github su un'applicazione eseguita da Heroku. Quando l'integrazione di Github è configurata per un'app Heroku, Heroku fa automaticamente la compilazione e, se ha successo, inserisce la nuova release sullo specifico repository in Github. 
-Il sito funzionante sulle Github Pages è visualizzabile a questo link: \href{https://weather-vortex.github.io/weather-vortex-client/#/}{https://weather-vortex.github.io/weather-vortex-client/}
+E' stato anche fatto il deploy del client sulle Github Pages e il deploy del backend su Heroku.
+
+Github Pages è una funzionalità di Github che permette di generare e ospitare il sito web memorizzato nel repository su Github. Heroku è una piattaforma cloud come servizio progettata per aiutare a realizzare e distribuire applicazioni online.
+
+Entrambe si integrano con il repository Github per rendere semplice il deploy. Infatti, ad ogni commit sul branch main dei repository, avviene in automatico la compilazione e, se ha successo, le applicazioni vengono pubblicate. 
+
+Il sito funzionante sulle Github Pages è visualizzabile a questo link:
+
+\href{https://weather-vortex.github.io/weather-vortex-client/}{https://weather-vortex.github.io/weather-vortex-client/}
 
 
-\section{Docker}
+\section{Docker e Compose}
 Per dispiegare tutti i componenti utili per l’applicazione è stato impiegato il
 gestore di container Docker e la sua estensione Docker-compose.\\
 Il repository Docker-compose per Weather Vortex da scaricare è presente a questo link:
 \href{https://github.com/Weather-Vortex/docker-compose}{https://github.com/Weather-Vortex/docker-compose}.
-Per ciascun componente è stato creato il file di istruzioni per creare l’immagine e utilizzando docker-compose è stato possibile avviare tutti i container utilizzando un solo comando.
-Dopo aver apportato le opportune configurazioni descritte nel file Readme del repository basterà infatti un unico comando per avviare l'intera applicazione : \textbf{[sudo] docker-compose up}
+Per ciascun componente è stato creato il file di istruzioni per generare l’immagine e utilizzando docker-compose è possibile avviare tutti i container utilizzando un solo comando.
 
+Dopo aver apportato le opportune configurazioni descritte nel file Readme del repository basterà infatti un unico comando per avviare l'intera applicazione:
+
+\textbf{[sudo] docker-compose up}.
