@@ -4,8 +4,6 @@
 
 \chapter{Implementazione}
 \section{Server}
-\textit{Commento: questo secondo me è da fare insieme, ognuno può aggiungere qualcosa della propria parte. Magari scrive uno e l'altro se vuol dire qualcosa anche della sua parte la aggiunge.}
-
 Per la parte backend ci si è avvalsi della tecnologia Node.js, Express e MongoDb per il database. Per l'invio delle email è stato utilizzato un modulo di Node.js chiamato Nodemailer.
 
 
@@ -163,13 +161,8 @@ userSchema.methods.comparePassword = function (password, cb) {
 \end{lstlisting}
 
 \section{Client}
-\textit{Commento:anche questo da completare come nel server, ci ho messo qualche spunto}\\
 Per lo sviluppo del Client è stato usato Vuetify, un framework di componenti di Material Design per Vue. js che consente agli sviluppatori di creare incredibili applicazioni in modo rapido ed efficiente.
-Si riportano ora alcuni aspetti implementativi del server che si ritiene oppurtuno evidenziare: 
-\subsection{Socket}
-TODO
 
-\subsection{Store}
 Per gestire lo stato dell'applicazione, abbiamo avuto la necessità di sfruttare il framework Vuex. Esso fornisce un'interfaccia unica per tutta l'applicazione per interrrogare lo stato e modificarlo. Questo permette di avere un'unica fonte di verità dei dati e ne preserva maggiormente l'integrità.
 
 Graficamente potremo delinearne così la struttura:
@@ -211,6 +204,75 @@ app.get("/info", (req, res, next) =>
 
 \section{Prodotto Finale}
 \label{prodottofinale}
-Il prodotto finale ha subito delle evoluzioni rispetto al mockup ma segue le linee
-guida imposte.
-TODO: Screen di esempio dell'applicazione
+Il prodotto finale ha subito delle evoluzioni rispetto al \href{https://github.com/Weather-Vortex/WeatherVortex-Report/raw/main/MockUps/WeatherVortex-Mockup.pdf}{mockup} ma segue comunque le linee
+guida imposte. Nonostante la resa grafica sia stata rivoluzionata, la user experience e i meccanismi di navigazione del sito sono rimasti gli stessi.  Il cambiamento più degno di nota è stato lo spostare le voci del menù dalla barra in alto all'apposito scomparto a sinistra. Qui di seguito sono riportati gli screenshot delle schermate più importanti.
+
+\begin{figure}[H]
+    \caption{Pagina Home finale}
+    \label{fig:imHome}
+    \centering
+    \includegraphics[width=1\textwidth]{Images/homepage.PNG}
+\end{figure}
+La home del sito è la pagina visivamente più importante, in quanto sarà la prima che l'utente visualizza e quella che vedrà più spesso. Per facilitare l'esperienza, il primo box disponibile è quello delle previsioni. Questa scelta è stata fatta soprattutto per incentivare i nuovi utenti a provare le funzionalità del sito immediatamente, senza che debbano sforzarsi a cercarle. Oltre all'immediatezza intuitiva la scelta aiuta a velocizzare le operazioni per i visitatori assidui del sito, che vogliono raggiungere il risultato desiderato con il minore numero di click possibili.
+
+Sotto all'elemento per le previsioni sono disposti due pulsanti di Login e Registrazione. Questo funge da incentivo a creare un account o a effettuarvici l'accesso. Qualora l'utente effettui il login e ritorni sulla home, i pulsanti non saranno più visualizzati.
+
+\begin{figure}[H]
+    \caption{Pagina Login finale}
+    \label{fig:imLogin}
+    \centering
+    \includegraphics[width=1\textwidth]{Images/Login1.PNG}
+\end{figure}
+La schermata di login ha una resa molto funzionale e chiara. Questa scelta ha lo scopo di rendere semplice e intuitiva l'operazione chiave di collegarsi al proprio account, senza che l'utente possa cliccare altrove e non portarla a termine.
+ 
+\begin{figure}[H]
+    \caption{Pagina Profilo Privato finale}
+    \label{fig:PrivProf}
+    \centering
+    \includegraphics[width=1\textwidth]{Images/PrivateProfile.PNG}
+\end{figure}
+Il profilo privato permette di gestire i propri dati. Un design tabulare è stato scelto per rendere chiare le varie operazioni possibili di modifica e cancellazione. Tramite le due tabelle l'utente può visionare immediatamente i feedback rilasciati e quali centraline siano collegate al suo profilo. 
+
+\begin{figure}[H]
+    \caption{Pagina Previsioni finale}
+    \label{fig:imForecast}
+    \centering
+    \includegraphics[width=1\textwidth]{Images/ForecastIn.PNG}
+\end{figure}
+La pagina delle previsioni permette di selezionare una posizione e scegliere tra la previsione corrente e quella futura fino a 3 giorni. Nella barra di ricerca è possibile scrivere il nome di una località o passare direttamente le coordinate. Qualora si volesse avere le previsioni nella posizione corrente è possibile chiedere la geolocalizzazione.
+
+La pagina delle previsioni attuali permette di comparare facilmente le differenti previsioni dei provider. In alto è disponibile sempre la barra di ricerca geografica per cambiare località. 
+Un'ulteriore barra di ricerca fornisce la possibilità di ricercare uno specifico provider o centralina digitando il nome o parte di esso.
+
+La card centrale fornisce i dati aggregati.  La stima viene fatta prendendo la media dei valori e la previsione con frequenza maggiore.
+
+\begin{figure}[H]
+    \caption{Pagina Previsioni attuali finale}
+    \label{fig:imForecast1}
+    \centering
+    \includegraphics[width=1\textwidth]{Images/Forecast3.PNG}
+\end{figure}
+
+\begin{figure}[H]
+    \caption{Pagina Previsioni per tre giorni finale}
+    \label{fig:imForecast2}
+    \centering
+    \includegraphics[width=1\textwidth]{Images/Forecast3days.PNG}
+\end{figure}
+La pagina con le previsioni future segue lo stesso schema della pagina delle previsioni attuali. La scelta è stata presa per facilitare l'utente per permettergli di decidere di scegliere la finestra temporale di cui sapere le previsioni. Inoltre, sono presenti dei pulsanti per poter selezionare le 3 giornate successive e uno slider per poter decidere anche l'orario.
+
+\begin{figure}[H]
+    \caption{Pagina Feedback finale}
+    \label{fig:imFeedbacks}
+    \centering
+    \includegraphics[width=1\textwidth]{Images/feedback.PNG}
+\end{figure}
+La pagina dei feedback raccoglie tutte le recensioni lasciate dagli utenti divise per provider. Anche qui è possibile ricercarne uno con l'apposita barra. Cliccando sull'icona di un utente si viene indirizzati al suo profilo pubblico. Qualora si sia autenticati
+è possibile lasciare una recensione direttamente dal pulsante sottostante.
+
+\begin{figure}[H]
+    \caption{Pagina About finale}
+    \label{fig:imAbout}
+    \centering
+    \includegraphics[width=1\textwidth]{Images/about.PNG}
+\end{figure}

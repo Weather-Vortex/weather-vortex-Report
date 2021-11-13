@@ -8,24 +8,65 @@ In questo capitolo viene spiegato come scaricare e utilizzare la piattaforma
 WeatherVortex. Essa è consultabile a questo link: \href{https://github.com/Weather-Vortex}{WeatherVortex Organization}.
 
 \section{Github pages e Heroku}
-E' stato anche fatto il deploy del client sulle Github Pages e il deploy del backend su Heroku.
 
-Github Pages è una funzionalità di Github che permette di generare e ospitare il sito web memorizzato nel repository su Github. Heroku è una piattaforma cloud come servizio progettata per aiutare a realizzare e distribuire applicazioni online.
+Nella prima visione del progetto, era stato pensato effettuare il deploy del progetto Client sulle \href{https://pages.github.com/}{Github Pages} e quello del progetto Server su \href{https://www.heroku.com/home}{Heroku}.
+
+\textbf{Github Pages} è una funzionalità di Github che permette di generare e ospitare un sito web scritto con le tecnologie HTML, CSS e JS memorizzato nel repository su Github. \textbf{Heroku} è uno servizio PaaS progettato per aiutare a realizzare e distribuire applicazioni online. Il piano gratuito per entrambi questi ambienti infatti sarebbe stato sufficente.
 
 Entrambe si integrano con il repository Github per rendere semplice il deploy. Infatti, ad ogni commit sul branch main dei repository, avviene in automatico la compilazione e, se ha successo, le applicazioni vengono pubblicate. 
 
-Il sito funzionante sulle Github Pages è visualizzabile a questo link:
+Il sito sulle Github Pages è visualizzabile a questo link:
 
 \href{https://weather-vortex.github.io/weather-vortex-client/}{https://weather-vortex.github.io/weather-vortex-client/}
 
+\subsection{Problematiche riscontrate}
+
+Tuttavia, successivamente ci siamo accorti che l'ambiente Pages non ci permetteva di supportare anche l'uso dei cookie con il parametro HTTP only valorizzato a True perché il dominio github.io è elencato in una reserved list e i browser non permettono di salvare cookies di quel tipo in questi domini a meno che non provengano dal dominio stesso. Questa configurazione quindi si è dimostrata inadeguata ai fini del progetto, dato che il dominio dal quale sarebbero arrivati i cookies di autenticazione corrisponde ad un altro (https://weather-vortex-server.herokuapp.com/). Abbiamo dovuto quindi trovare un'altra modalità che non richiedesse di stravolgere l'architettura del nostro sistema senza rinunciare alla sicurezza.
+
+Data la presenza in tutti i repository dei file Dockerfile per la creazione delle immagini Docker e l'esecuzione in containers come visto a lezione, abbiamo pensato di sfruttare tali funzionalità con l'aggiunta dell'applicativo \href{https://docs.docker.com/compose/}{Docker Compose} per la dimostrazione in sede d'esame.
 
 \section{Docker e Compose}
 Per dispiegare tutti i componenti utili per l’applicazione è stato impiegato il
-gestore di container Docker e la sua estensione Docker-compose.\\
-Il repository Docker-compose per Weather Vortex da scaricare è presente a questo link:
+gestore di container Docker e la sua estensione Docker-compose.
+
+Per ciascun componente del sistema è stato creato il file \textit{Dockerfile}, contenente le istruzioni per generare l’immagine dove il componente possa essere eseguito. 
+
+Per l'immagine dell'applicativo Server e Centralina è stata richiesta una configurazione semplice e lineare, come quella vista al seminario a lezione:
+
+\begin{lstlisting}
+FROM node:16-alpine
+
+...
+
+CMD ["npm", "start"]
+
+\end{lstlisting}
+
+Per l'immagine dell'applicativo Client è stato necessario programmare due fasi di creazione dell'immagine, come nel seguente listato:
+
+\begin{lstlisting}
+# build stage
+
+FROM node:lts-alpine as build-stage
+
+...
+
+RUN npm run build
+
+# production stage
+
+FROM nginx:stable-alpine as production-stage
+
+...
+
+CMD ["nginx", "-g", "daemon off;"]
+
+\end{lstlisting}
+
+Questo è necessario perché per l'applicativo con Vue è richiesto l'uso di un reverse proxy per gestire la navigazione con il componente Vue-Router, ma non in fase di build, dove basta soltanto partire da un'immagine leggera per snellire il processo.
+
+Il repository contenente la configurazione Docker-Compose per Weather Vortex è pubblica e presente a questo link:
+
 \href{https://github.com/Weather-Vortex/docker-compose}{https://github.com/Weather-Vortex/docker-compose}.
-Per ciascun componente è stato creato il file di istruzioni per generare l’immagine e utilizzando docker-compose è possibile avviare tutti i container utilizzando un solo comando.
 
-Dopo aver apportato le opportune configurazioni descritte nel file Readme del repository basterà infatti un unico comando per avviare l'intera applicazione:
-
-\textbf{[sudo] docker-compose up}.
+Dopo aver apportato le opportune configurazioni descritte nel file Readme basterà infatti il comando \textbf{[sudo] docker-compose up} per avviare l'intero sistema.
