@@ -176,7 +176,7 @@ jobs:
           git fetch --all
       - name: Clone Pandoc dependency 
         run: |
-          git clone https://github.com/SmartDogHouse/pandoc-uikit.git
+          git clone https://github.com/igor-lirussi/pandoc-uikit
       - name: Pandoc tex conversion
         uses: docker://pandoc/latex:latest
         with:
@@ -193,7 +193,7 @@ jobs:
           git checkout gh-pages
           git rm -rf .
           git clean -fxd
-          git clone https://github.com/SmartDogHouse/pandoc-uikit.git
+          git clone https://github.com/igor-lirussi/pandoc-uikit
           rm -rdf pandoc-uikit/.git*
           git checkout main DrawIo
           git checkout main Images
