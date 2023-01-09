@@ -27,12 +27,9 @@ variables:
     - twosides
     - draft
 
-# metadata values specified here are parsed as literal
-# string text, not markdown:
+# metadata values specified here are parsed as literal string text, not markdown:
 #metadata:
 #  author:
-#  - Gyordan Caminati
-#  - Sara Kiade
 #  - Igor Lirussi
 metadata-files: 
 - ./pandoc-uikit/meta.yaml
@@ -153,9 +150,6 @@ track-changes: accept
 html-q-tags: true
 css:
 - ./pandoc-uikit/uikit.css
-
-# none, all, or best
-ipynb-output: all
 
 # A list of two-element lists
 #request-headers:
