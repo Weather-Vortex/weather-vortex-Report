@@ -197,7 +197,12 @@ jobs:
           rm -rdf pandoc-uikit/.git*
           git checkout main DrawIo
           git checkout main Images
+          cp Images/favicon.png .
           git checkout main index.html
+          git checkout -f main README.md
+          mkdir readme
+          mv README.md ./readme
+          cp Images/favicon.png ./readme
           git status
           # git cherry-pick main, alternatives
           git add .
